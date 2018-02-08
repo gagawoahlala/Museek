@@ -14,6 +14,8 @@ var quiz = require('./routes/quiz');
 var helper = require('./routes/helper');
 var profile = require('./routes/profile');
 var setting = require('./routes/setting');
+var question = require('./routes/question');
+var summary = require('./routes/summary');
 
 
 // Example route
@@ -47,6 +49,10 @@ app.get('/quiz', quiz.view);
 app.get('/helper', helper.view);
 app.get('/profile', profile.view);
 app.get('/setting', setting.view);
+app.get('/question', question.view);
+app.get('/summary', summary.view);
+
+
 
 
 

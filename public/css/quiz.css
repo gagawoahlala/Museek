@@ -1,0 +1,29 @@
+.start-button {
+  height: 45px;
+  width: 35%;
+}
+
+
+.caption {
+  max-width: 370px;
+/* text-align: center; */
+  margin: 10px auto;
+}
+
+.tip {
+  border: 1px solid #d2d1d1;
+  margin: 19px auto;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+
+}
+
+.thumbnail {
+  max-width: 370px;
+  margin: auto auto;
+}
+
+.tip-description {
+  margin: auto;
+}
