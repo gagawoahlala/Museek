@@ -1,0 +1,71 @@
+div.navbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+div.navbar-header a {
+  font-size: 30px;
+  color: #949090;
+}
+
+div a:hover {
+  text-decoration: none;
+}
+
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #e0e0e0;
+}
+
+.button-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+main {
+  text-align: center;
+}
+
+div.navbar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.navbar-footer a {
+  font-size: 30px;
+  color: #949090;
+}
+
+main .btn-group-vertical {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 300px;
+  margin-top: 88px;
+  margin-bottom: 60px;
+
+}
+
+
+main div.btn-group-vertical button {
+  height: 62px;
+  width: 70%;
+}

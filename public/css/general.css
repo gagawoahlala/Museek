@@ -1,0 +1,11 @@
+.universal-button {
+  background: whitesmoke;
+  border-radius: 40px;
+  transition: all 1s;
+  border-width: 2px;
+}
+
+.universal-button:hover {
+  background-color: #ffffff;
+  /*transition: all;*/
+}
