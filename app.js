@@ -16,6 +16,8 @@ var profile = require('./routes/profile');
 var setting = require('./routes/setting');
 var question = require('./routes/question');
 var summary = require('./routes/summary');
+var auth = require('./routes/auth');
+
 
 
 // Example route
@@ -44,6 +46,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
+app.get('/auth', auth.view);
 app.get('/stat', stat.view);
 app.get('/quiz', quiz.view);
 app.get('/helper', helper.view);

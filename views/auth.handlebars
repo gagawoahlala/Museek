@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>MuSeek</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/general.css" rel="stylesheet">
+	<link href="/css/responsive.css" rel="stylesheet">
+	<!-- this is a comment in HTML -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class="container">
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<label for="inputEmail" class="sr-only">Email address</label>
+			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="remember-me"> Remember me
+				</label>
+				<a id="forget-password" href="">Forget  Password?</a>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			<button id="signUpLogin" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+
+		</form>
+
+		<form class="form-signup" style="display: none;">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<label for="inputEmail" class="sr-only">Email address</label>
+			<input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" class="form-control" placeholder="Password" required="">
+			<label for="inputPassword" class="sr-only">Confirm Password</label>
+			<input type="password"  class="form-control" placeholder="Password" required="">
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="remember-me"> Remember me
+				</label>
+				<a id="have-account" href="">Already have an account?</a>
+			</div>
+			<button id="signUpRegist" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+		</form>
+
+		<form class="form-forget" style="display: none;">
+			<h2 class="form-signin-heading">Retrieve your password</h2>
+			<label for="inputEmail" class="sr-only">Email address</label>
+			<input type="email"  class="form-control" placeholder="Email address" required="" autofocus="">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Send link</button>
+			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+
+					<div class="modal-body">
+
+					<H2>Link sent!</H2>
+					<!-- <h4>Your Laptop battery is less then 10%.Recharge the battery.</h4> -->
+					<button id="sendLink" type="button" class="btn btn-primary" data-dismiss="modal" data-target=".bs-example-modal-lg">Go back to login</button>
+					</div>
+				</div>
+			</div>
+			</div>
+		</form>
+
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/auth.js"></script>
+</html>
