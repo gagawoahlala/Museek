@@ -1,4 +1,35 @@
-.form-signin .alert-danger {
-  display: none;
+.alert.alert-danger {
+  /*display: none;*/
   /*transition: all 1s;*/
+}
+
+.container {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+div.navbar-header {
+  justify-content: center;
+}
+
+form .form-control {
+  margin-bottom: 10px;
+  height: 40px;
+}
+
+.inline-display {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.notice {
+  margin-top: 20px;
+}
+
+
+.form-forget h2{
+  font-size: 23px;
 }

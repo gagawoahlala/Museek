@@ -12,7 +12,8 @@ function initializePage() {
   $('#have-account').click(renderPage("form-signin"));
   $('#sendLink').click(renderPage("form-signin",popup));
 	$('#signInForget').click(renderPage("form-signin"));
-	$('#signInLogin').bind('click', checkValid);
+	$('#signInLogin').bind('click', validLogin);
+	$('#signUpRegist').bind('click', validSignUp);
 }
 
 function validateEmail(email) {
@@ -20,9 +21,35 @@ function validateEmail(email) {
   return re.test(email);
 }
 
+function validSignUp(e) {
+	var email = $("#signUpEmail").val();
+	if (validateEmail(email)) {
+		// $("#result").text(email + " is valid :)");
+		// $("#result").css("color", "green");
+		$(this).closest('body').fadeOut(200);
+		setTimeout(function(){
+			window.location = '/';
+		}, 400);
 
-function checkValid(e) {
+	} else {
+		if ($(".alert-box").css("display") === "none") {
+			$(".alert-box").slideDown(500);
+			// setTimeout(function() {
+			// 	$("#alerting").css("display", "block");
+			// },500);
+
+		} else {
+			// $('.form-signin .alert-danger').effect( "bounce", "slow");
+			$(".alert-box").effect( "shake", "slow");
+
+		}
+	}
+	return false;
+}
+
+function validLogin(e) {
 	// $("#result").text("");
+	e.preventDefault();
 	var email = $("#inputEmail").val();
 	if (validateEmail(email)) {
 		// $("#result").text(email + " is valid :)");
@@ -33,7 +60,19 @@ function checkValid(e) {
 		}, 400);
 
 	} else {
-		$('.form-signin .alert-danger').slideDown("slow");
+		if ($(".alert-box").css("display") === "none") {
+			$(".alert-box").slideDown(500);
+			// setTimeout(function() {
+			// 	$("#alerting").css("display", "block");
+			// },500);
+
+		} else {
+			// $('.form-signin .alert-danger').effect( "bounce", "slow");
+			$(".alert-box").effect( "shake", "slow");
+
+		}
+
+
 		// $('.form-signin .alert-danger').delay(300).fadeIn(300);
 
 	}
@@ -61,6 +100,8 @@ function renderPage(contentToDisplay,callback) {
     console.log("trigger event");
     $("." + contentToDisplay).delay(300).fadeIn(300);
     $(this).closest('form').fadeOut(300);
+		$(".alert-box").delay(300).css("display", "none");
+
   };
 
 }
