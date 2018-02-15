@@ -31,13 +31,21 @@ div.navbar-footer a {
 div.navbar-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  height: 60px;
+}
 
+div.navbar-header .navbar-toggle {
+  margin-right: 0px;
 }
 
 div.navbar-header a {
   font-size: 30px;
   color: #949090;
+}
+
+div.navbar-header span {
+  font-size: 25px;
 }
 
 div a:hover {

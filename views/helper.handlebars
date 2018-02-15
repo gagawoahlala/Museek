@@ -8,7 +8,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/general.css" rel="stylesheet">
-	<link href="/css/home.css" rel="stylesheet">
+	<link href="/css/helper.css" rel="stylesheet">
 	<link href="/css/responsive.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->
 
@@ -27,24 +27,43 @@
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
 					<a href="javascript:history.back()" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></a>
-					<span class="navbar-brand">Helper</span>
+					<span class="navbar-brand">Help and FAQ</span>
 					<a style="visibility: hidden;"class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
 		    </div>
-
 		  </div><!-- /.container-fluid -->
 		</nav>
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
-		<main class="container-fluid">
 
+		<main class="container-fluid">
+				<div class="tab-content panels-faq">
+					{{#each questions}}
+					<div class="tab-pane active" id="{{id}}">
+						<div class="panel-group" id="help-accordion-{{id}}">
+							<div class="panel panel-default panel-help">
+								<a href="#answer-{{id}}" data-toggle="collapse" data-parent="#help-accordion-{{id}}">
+									<div class="panel-heading">
+										<h2>{{title}}</h2>
+									</div>
+								</a>
+								<div id="answer-{{id}}" class="collapse">
+									<div class="panel-body">
+										{{answer}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
 		</main>
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
 
 	</div>
-
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/helper.js"></script>
 </body>
 </html>
