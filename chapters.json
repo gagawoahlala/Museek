@@ -1,0 +1,81 @@
+{
+	"chapters": [
+		{
+			"name": "Notes",
+      "lessons": [
+				{
+					"name" : "Treble Clef",
+					"id" : 0
+				},
+        {
+          "name" : "Bass Clef",
+					"id" : 1
+        },
+        {
+          "name" : "Swithing Clefs",
+					"id" : 2
+        },
+        {
+          "name" : "Durations",
+					"id" : 3
+        }
+      ]
+		},
+    {
+      "name": "Rhythm",
+      "lessons": [
+        {
+          "name" : "kjhkj"
+        },
+        {
+          "name" : "hkjhjk"
+        },
+        {
+          "name" : "kjhjh"
+        }
+      ]
+    },
+    {
+      "name": "Rests",
+      "lessons": [
+        {
+          "name" : "kljlhj"
+        },
+        {
+          "name" : "fhdgffhg"
+        },
+        {
+          "name" : "hdjffjhfgjh"
+        }
+      ]
+    },
+    {
+      "name": "The Musical Alphabet",
+      "lessons": [
+        {
+          "name" : "hfdfhgj"
+        },
+        {
+          "name" : "fsdfhjgkh"
+        },
+        {
+          "name" : ""
+        }
+      ]
+    },
+    {
+      "name": "Clefs",
+      "lessons": [
+        {
+          "name" : ""
+        },
+        {
+          "name" : ""
+        },
+        {
+          "name" : ""
+        }
+      ]
+    }
+	]
+}

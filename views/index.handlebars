@@ -32,7 +32,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<span class="navbar-brand">Notes</span>
+					<span class="navbar-brand">{{name}}</span>
 					<a href="/helper" class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
 		    </div>
 
@@ -40,7 +40,7 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<div class="scrollmenu">
 					  <!-- <a href="#home">Prereq</a> -->
-					  <a href="/">Notes</a>
+					  <a href="/?chapter=0">Notes</a>
 						<a class="button-disabled" href="#contact">Rhythm</a>
 					  <a class="button-disabled" href="#contact">Rests</a>
 					  <a class="button-disabled" href="#about">The Musical Alphabet</a>
@@ -55,10 +55,15 @@
 		<!-- p means paragraph -->
 		<main class="container-fluid">
 			<div class="btn-group-vertical" role="group" aria-label="">
-				<button onclick="location.href = '/quiz';" class="universal-button">Treble Clef</button>
+				<!-- <button onclick="location.href = '/quiz';" class="universal-button">Treble Clef</button> -->
+				{{#each lessons}}
+						<button id="c{{currentChapterId}}l{{id}}" onclick="location.href = '/quiz/?chapter={{currentChapterId}}&id={{id}}';"class="universal-button button-disabled">{{name}}</button>
+				{{/each}}
+
+				<!-- <button onclick="location.href = '/quiz';" class="universal-button">Treble Clef</button>
 				<button class="universal-button button-disabled">Bass Clef</button>
 				<button class="universal-button button-disabled">Switching Clefs</button>
-				<button class="universal-button button-disabled">Duration</button>
+				<button class="universal-button button-disabled">Duration</button> -->
 
 			</div>
 		</main>

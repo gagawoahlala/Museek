@@ -1,0 +1,62 @@
+.start-button {
+  height: 45px;
+  width: 35%;
+}
+
+.caption {
+  max-width: 370px;
+/* text-align: center; */
+  margin: 10px auto;
+}
+
+
+.thumbnail {
+  max-width: 370px;
+  margin: auto auto;
+}
+
+.question-description {
+  margin: auto;
+}
+
+.answer span {
+    /* style this span element so we can display nicely, this stlying is not neccessary */
+    margin: 10px 0;
+    float: left;
+}
+
+.answer input[type="radio"]
+{
+    /* hide the inputs */
+    transition: all 1s;
+    opacity: 0;
+}
+
+/* style your lables/button */
+.answer input[type="radio"] + label
+{
+    /* keep pointer so that you get the little hand showing when you are on a button */
+    cursor: pointer;
+    /* the following are the styles */
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    background: #efefef;
+    color: #aaa;
+    border-radius: 3px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0);
+    transition: all 0.5s;
+    width: 100px;
+    font-size: 50px;
+
+}
+
+.answer input[type="radio"]:checked + label
+{
+    /* style for the checked/selected state */
+    background: #777;
+    border: 1px solid #444;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+    color: white;
+    transition: all 0.5s;
+
+}

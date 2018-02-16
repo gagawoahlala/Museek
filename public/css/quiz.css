@@ -22,6 +22,7 @@
 .thumbnail {
   max-width: 370px;
   margin: auto auto;
+  border: none;
 }
 
 .tip-description {

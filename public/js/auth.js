@@ -28,7 +28,7 @@ function validSignUp(e) {
 		// $("#result").css("color", "green");
 		$(this).closest('body').fadeOut(200);
 		setTimeout(function(){
-			window.location = '/';
+			window.location = '/?chapter=0';
 		}, 400);
 
 	} else {
@@ -56,7 +56,7 @@ function validLogin(e) {
 		// $("#result").css("color", "green");
 		$(this).closest('body').fadeOut(200);
 		setTimeout(function(){
-			window.location = '/';
+			window.location = '/?chapter=0';
 		}, 400);
 
 	} else {

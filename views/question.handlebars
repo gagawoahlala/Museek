@@ -8,7 +8,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/general.css" rel="stylesheet">
-	<link href="/css/home.css" rel="stylesheet">
+	<link href="/css/question.css" rel="stylesheet">
 	<link href="/css/responsive.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->
 
@@ -20,15 +20,14 @@
     <![endif]-->
 </head>
 
-<body>
+<body style="display:none;">
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-					<a href="javascript:history.back()" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></a>
+					<a href="/?chapter=0" class="glyphicon glyphicon-remove" aria-hidden="true"></a>
 					<span class="navbar-brand">Quiz</span>
-					<a href="/helper" class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
 		    </div>
 
 		  </div><!-- /.container-fluid -->
@@ -36,7 +35,78 @@
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<main class="container-fluid">
-			<a href="/summary" aria-hidden="true">Finish quiz</a>
+			<div id="question1" class="row">
+				<div class="thumbnail">
+					<img class="question-picture" src="/image/c_note.svg" alt="">
+					<div class="caption">
+						<div class="question-type">
+							<p>Select the right answer:</p>
+						</div>
+						<div class="question-description">
+							<p>Which note is this?</p>
+						</div>
+						<div class="answer">
+							<span class="col-xs-6 col-sm-6">
+							<input id="Radio1" name="Radios" type="radio" value="Option 1">
+							<label for="Radio1">A</label>
+							</span>
+
+							<span class="col-xs-6 col-sm-6">
+							<input id="Radio2" name="Radios" type="radio" value="Option 2" >
+							<label for="Radio2">B</label>
+							</span>
+
+							<span class="col-xs-6 col-sm-6">
+							<input id="Radio3" name="Radios" type="radio" value="Option 3" >
+							<label for="Radio3">C</label>
+							</span>
+
+							<span class="col-xs-6 col-sm-6">
+							<input id="Radio4" name="Radios" type="radio" value="Option 4" >
+							<label for="Radio4">D</label>
+							</span>
+
+						</div>
+						<p><button id="button1" class="start-button universal-button">Confirm Answer</button></p>
+					</div>
+				</div>
+			</div>
+			<div id="question2" class="row" style="display:none;">
+				<div class="thumbnail">
+					<img class="question-picture" src="/image/g_note.svg" alt="">
+					<div class="caption">
+						<div class="question-type">
+							<p>Select the right answer:</p>
+						</div>
+						<div class="question-description">
+							<p>Which note is this?</p>
+						</div>
+						<div class="answer">
+							<span class="col-xs-6 col-sm-6">
+							<input id="RadioA" name="Radios1" type="radio" value="Option A">
+							<label for="RadioA">E</label>
+							</span>
+
+							<span class="col-xs-6 col-sm-6">
+							<input id="RadioB" name="Radios1" type="radio" value="Option B" >
+							<label for="RadioB">F</label>
+							</span>
+
+							<span class="col-xs-6 col-sm-6">
+							<input id="RadioC" name="Radios1" type="radio" value="Option C" >
+							<label for="RadioC">G</label>
+							</span>
+
+							<span class="col-xs-6 col-sm-6">
+							<input id="RadioD" name="Radios1" type="radio" value="Option D" >
+							<label for="RadioD">H</label>
+							</span>
+
+						</div>
+						<p><button id="button2" class="start-button universal-button">Finish Quiz</button></p>
+					</div>
+				</div>
+			</div>
 		</main>
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
@@ -46,5 +116,6 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/question.js"></script>
 </body>
 </html>

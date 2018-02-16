@@ -8,7 +8,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/general.css" rel="stylesheet">
-	<link href="/css/home.css" rel="stylesheet">
+	<link href="/css/summary.css" rel="stylesheet">
 	<link href="/css/responsive.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->
 
@@ -20,15 +20,15 @@
     <![endif]-->
 </head>
 
-<body>
+<body style="display:none;">
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-					<a href="/" class="glyphicon glyphicon-ok-circle" aria-hidden="true"></a>
+					<a style="visibility: hidden;" class="glyphicon glyphicon-ok-circle" aria-hidden="true"></a>
 					<span class="navbar-brand">Summary</span>
-					<a style="visibility: hidden;"class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
+					<a style="visibility: hidden;" class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
 		    </div>
 
 		  </div><!-- /.container-fluid -->
@@ -36,7 +36,11 @@
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<main class="container-fluid">
-			<a href="/stat" aria-hidden="true">See your statistics</a>
+			<!-- <a href="/stat" aria-hidden="true">See your statistics</a> -->
+			<img class="question-picture" src="/image/quiz_and_decoration.svg" alt="">
+			<h2>Score:100%</h2>
+			<button id="replay" type="button" class="btn btn-lg btn-primary">Replay</button>
+			<button id="goNote" type="button" class="btn btn-lg btn-primary">Back to Note</button>
 		</main>
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
@@ -46,5 +50,7 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/summary.js"></script>
+
 </body>
 </html>
