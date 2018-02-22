@@ -1,4 +1,20 @@
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
+html { width: 100%; height:100%; overflow:hidden; }
+
+body {
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background: #092756;
+  background: linear-gradient(to bottom, #93f9b9, #daffe8);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
 
 .alert.alert-danger {
   /*display: none;*/
@@ -30,6 +46,7 @@ form .form-control {
 
 form .form-control:focus {
   background-color: white;
+  border-color: #79f368;
   /*transition: all;*/
 }
 
@@ -53,24 +70,6 @@ form .form-control:focus {
 main .btn-block {
   background-color: #58ca58;
   border-color: #49af3b;
-}
-
-* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
-
-html { width: 100%; height:100%; overflow:hidden; }
-
-body {
-	width: 100%;
-	height:100%;
-	font-family: 'Open Sans', sans-serif;
-	background: #092756;
-  background: linear-gradient(to bottom, #93f9b9, #daffe8);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
 }
 
 
@@ -104,4 +103,29 @@ body {
   background-color: #2EE59D;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
+}
+
+.shakey {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }

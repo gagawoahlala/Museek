@@ -40,7 +40,7 @@ function validSignUp(e) {
 
 		} else {
 			// $('.form-signin .alert-danger').effect( "bounce", "slow");
-			$(".alert-box").effect( "shake", "slow");
+			// $(".alert-box").effect( "shake", "slow");
 
 		}
 	}
@@ -67,8 +67,12 @@ function validLogin(e) {
 			// },500);
 
 		} else {
+			$('.form-signin .alert-danger').addClass("shakey");
+			setTimeout(function() {
+				$('.form-signin .alert-danger').removeClass("shakey");
+			},820);
 			// $('.form-signin .alert-danger').effect( "bounce", "slow");
-			$(".alert-box").effect( "shake", "slow");
+			// $(".alert-box").effect( "shake", "slow");
 
 		}
 
