@@ -8,9 +8,12 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  $('#replay').click(goToPage("/quiz/?chapter=&id=0"));
+  var myStorage = window.localStorage;
+  var chapter = myStorage.getItem('chapter');
+  var lesson = myStorage.getItem('lesson');
+  $('#replay').click(goToPage(`/quiz/?chapter=&id=${lesson}`));
 
-  $('#goNote').click(goToPage("/?chapter=0"));
+  $('#goNote').click(goToPage(`/?chapter=${chapter}`));
   // $("#question1 .answer span label").click(enableButton);
 }
 

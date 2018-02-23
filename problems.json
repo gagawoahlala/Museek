@@ -1,0 +1,55 @@
+{
+	"chapters": [
+		{
+			"name": "Notes",
+      "lessons": [
+				{
+					"name" : "Treble Clef",
+					"questions": [
+						{
+
+							"image" : "/image/c_note.svg",
+							"options" : [
+								{
+									"value": "A"
+								},
+								{
+									"value": "B"
+								},
+								{
+									"value": "C"
+								},
+								{
+									"value": "D"
+								}
+							],
+							"answer" : "B"
+						},
+						{
+							"image" : "/image/g_note.svg",
+							"options" : [
+								{
+									"value": "E"
+								},
+								{
+									"value": "F"
+								},
+								{
+									"value": "G"
+								},
+								{
+									"value": "H"
+								}
+							],
+							"answer" : "G"
+						}
+					]
+				},
+        {
+          "name" : "Bass Clef",
+					"id" : 1
+        }
+      ]
+		}
+	]
+}

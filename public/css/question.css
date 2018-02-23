@@ -9,6 +9,10 @@
   margin: 10px auto;
 }
 
+.question-hidden {
+  display: none;
+}
+
 
 .thumbnail {
   max-width: 370px;
@@ -59,4 +63,11 @@
     color: white;
     transition: all 0.5s;
 
+}
+
+
+.modal {
+   position:fixed;
+   top:auto;
+   bottom:0;
 }

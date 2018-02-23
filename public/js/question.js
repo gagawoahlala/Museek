@@ -8,40 +8,65 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  $('#button1').click(renderPage("question2"));
-  var checkBoxes = $('#question1 .answer input[type="radio"]');
+  myStorage = window.localStorage;
+  myStorage.setItem('score', 0);
+  myStorage.setItem('total', 0);
+  $('#question0').removeClass("question-hidden");
+  $('button[id^="button"]').click(function(e) {
+    var id = $(this).closest('.row').next().attr('id');
+    renderPage(id)(e);
+  });
+
+  var checkBoxes = $('div[id^="question"] .answer input[type="radio"]');
   checkBoxes.change(function () {
+    var relatedButton = $(this).closest('.answer').next();
+    // console.log(checkBoxes.filter(':checked').attr('data-val'));
     if (checkBoxes.filter(':checked').length < 1) {
-      $("#button1").addClass("button-disabled")
+      relatedButton.addClass("button-disabled")
     } else {
-      $("#button1").removeClass("button-disabled")
+      relatedButton.removeClass("button-disabled")
 
     }
-    // $('#button1').prop('disabled', checkBoxes.filter(':checked').length < 1);
   });
+
   checkBoxes.change();
 
-  var checkBoxes1 = $('#question2 .answer input[type="radio"]');
-  checkBoxes1.change(function () {
-    if (checkBoxes1.filter(':checked').length < 1) {
-      $("#button2").addClass("button-disabled")
+  $('button[id^="modalPop"]').click(function(e) {
+    console.log($(this).attr('data-answer'));
+    var correctAns = $(this).attr('data-answer');
+    var tempScore = myStorage.getItem("score");
+    var tempTotal = myStorage.getItem("total");
+    tempTotal++;
+    if (correctAns === checkBoxes.filter(':checked').attr('data-val')){
+      tempScore++;
     } else {
-      $("#button2").removeClass("button-disabled")
-
+      var targetId = $(this).attr('data-target');
+      $(targetId + " .modal-body h2").text(correctAns + " is the correct Answer. You will do better next time!");
     }
-    // $('#button1').prop('disabled', checkBoxes.filter(':checked').length < 1);
+    myStorage.setItem("score", tempScore);
+    myStorage.setItem("total", tempTotal);
   });
-  checkBoxes1.change();
-  $('#button2').click(goToSummary);
-  // $("#question1 .answer span label").click(enableButton);
+  $('div[id^="question"]:last-child button[id^="button"]').text("finish quiz");
+  $('div[id^="question"]:last-child button[id^="button"]').click(goToSummary);
+
+  var $draggable = $('.draggable').draggabilly({
+    // options...
+    axis: 'y'
+    // containment: '.container'
+
+  })
+
+
 }
+
+
 
 
 function goToSummary(e) {
   e.preventDefault();
   $(this).closest('body').fadeOut(200);
   setTimeout(function(){
-    window.location = '/summary';
+    window.location = `/summary?correct=${myStorage.getItem("score")}&outof=${myStorage.getItem("total")}`;
   }, 400);
 }
 
@@ -55,7 +80,7 @@ function renderPage(contentToDisplay,callback) {
     }
     console.log("trigger event");
     $("#" + contentToDisplay).delay(300).fadeIn(300);
-    $(this).closest('.row').fadeOut(300);
+    $("#" + contentToDisplay).prev().fadeOut(300);
   };
 
 }

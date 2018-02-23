@@ -24,11 +24,12 @@ body {
   border-color: #a0e6a1;
   color: white;
   border-radius: 5px;
+  max-width: 240px;
 }
 
 .container {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
 
 }
 
@@ -46,8 +47,7 @@ form .form-control {
 
 form .form-control:focus {
   background-color: white;
-  border-color: #79f368;
-  /*transition: all;*/
+    border-color: #A5FAC5;  /*transition: all;*/
 }
 
 .inline-display {

@@ -35,78 +35,46 @@
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<main class="container-fluid">
-			<div id="question1" class="row">
-				<div class="thumbnail">
-					<img class="question-picture" src="/image/c_note.svg" alt="">
-					<div class="caption">
-						<div class="question-type">
-							<p>Select the right answer:</p>
+			{{#each questions}}
+				<div id="question{{@index}}" class="row question-hidden">
+					<div class="thumbnail">
+						<img class="question-picture" src={{image}} alt="">
+						<div class="caption">
+							<div class="question-type">
+								<p>Select the right answer:</p>
+							</div>
+							<div class="question-description">
+								<p>Which note is this?</p>
+							</div>
+
+							<div class="answer">
+								{{#each options}}
+									<span class="col-xs-6 col-sm-6">
+									<input id="Radio{{id}}" data-val= "{{value}}" name="Radios" type="radio" value="Option {{id}}">
+									<label for="Radio{{id}}">{{value}}</label>
+									</span>
+								{{/each}}
+							</div>
+							<button data-answer="{{answer}}" id="modalPop{{@index}}" data-backdrop="static" data-toggle="modal" data-target="#modal{{@index}}">Confirm Answer</button>
 						</div>
-						<div class="question-description">
-							<p>Which note is this?</p>
+					</div>
+					<!-- The Modal -->
+					<div id="modal{{@index}}" class="modal fade bs-example-modal-lg draggable" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+
+								<div class="modal-body">
+
+								<h2>Great Job!</h2>
+								<!-- <h4>Your Laptop battery is less then 10%.Recharge the battery.</h4> -->
+								<button id="button{{@index}}" data-dismiss="modal" class="start-button universal-button">Next Question</button>
+								</div>
+							</div>
 						</div>
-						<div class="answer">
-							<span class="col-xs-6 col-sm-6">
-							<input id="Radio1" name="Radios" type="radio" value="Option 1">
-							<label for="Radio1">A</label>
-							</span>
-
-							<span class="col-xs-6 col-sm-6">
-							<input id="Radio2" name="Radios" type="radio" value="Option 2" >
-							<label for="Radio2">B</label>
-							</span>
-
-							<span class="col-xs-6 col-sm-6">
-							<input id="Radio3" name="Radios" type="radio" value="Option 3" >
-							<label for="Radio3">C</label>
-							</span>
-
-							<span class="col-xs-6 col-sm-6">
-							<input id="Radio4" name="Radios" type="radio" value="Option 4" >
-							<label for="Radio4">D</label>
-							</span>
-
-						</div>
-						<p><button id="button1" class="start-button universal-button">Confirm Answer</button></p>
 					</div>
 				</div>
-			</div>
-			<div id="question2" class="row" style="display:none;">
-				<div class="thumbnail">
-					<img class="question-picture" src="/image/g_note.svg" alt="">
-					<div class="caption">
-						<div class="question-type">
-							<p>Select the right answer:</p>
-						</div>
-						<div class="question-description">
-							<p>Which note is this?</p>
-						</div>
-						<div class="answer">
-							<span class="col-xs-6 col-sm-6">
-							<input id="RadioA" name="Radios1" type="radio" value="Option A">
-							<label for="RadioA">E</label>
-							</span>
 
-							<span class="col-xs-6 col-sm-6">
-							<input id="RadioB" name="Radios1" type="radio" value="Option B" >
-							<label for="RadioB">F</label>
-							</span>
-
-							<span class="col-xs-6 col-sm-6">
-							<input id="RadioC" name="Radios1" type="radio" value="Option C" >
-							<label for="RadioC">G</label>
-							</span>
-
-							<span class="col-xs-6 col-sm-6">
-							<input id="RadioD" name="Radios1" type="radio" value="Option D" >
-							<label for="RadioD">H</label>
-							</span>
-
-						</div>
-						<p><button id="button2" class="start-button universal-button">Finish Quiz</button></p>
-					</div>
-				</div>
-			</div>
+			{{/each}}
 		</main>
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
@@ -116,6 +84,9 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+	<!-- or -->
+	<script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.js"></script>
 	<script src="/js/question.js"></script>
 </body>
 </html>
