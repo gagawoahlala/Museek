@@ -51,8 +51,10 @@ function initializePage() {
 
   var $draggable = $('.draggable').draggabilly({
     // options...
-    axis: 'y'
-    // containment: '.container'
+    // axis: 'y',
+    handle: '.modal-body',
+
+    containment: '.container'
 
   })
 
