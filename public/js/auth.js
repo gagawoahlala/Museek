@@ -104,6 +104,8 @@ function renderPage(contentToDisplay,callback) {
     console.log("trigger event");
     $("." + contentToDisplay).delay(300).fadeIn(300);
     $(this).closest('form').fadeOut(300);
+		$('.logo').fadeOut(300);
+		$('.logo').fadeIn(300);
 		$(".alert-box").delay(300).css("display", "none");
 
   };

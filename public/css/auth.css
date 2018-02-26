@@ -131,6 +131,7 @@ main .btn-block {
 }
 
 .logo_achor {
+	animation: 1s all;
 	pointer-events: none;
 	width: 90%;
   margin-bottom: 20px;
