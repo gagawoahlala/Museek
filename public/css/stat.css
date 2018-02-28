@@ -1,26 +1,30 @@
-#chart rect {
-  fill: #4aaeea;
+body {
+    font: 12px Arial;
+    margin: 0;
+    padding: 0;
 }
 
-#chart text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
+svg {
+    padding: 30px;
+    background: linear-gradient(to bottom, #93f9b9, #daffe8);
+}
+
+path {
+  fill: none;
+  stroke: white;
+  stroke-width: 10px;
+}
+
+.axis path, .axis line {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: #BBB;
+    stroke-width: 1;
 }
 
 .axis text {
-  font: 10px sans-serif;
-}
+    fill: #766;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 22px;
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #fff;
-  shape-rendering: crispEdges;
-}
-
-body {
-  background: #1a1a1a;
-  color: #eaeaea;
-  padding: 10px;
 }

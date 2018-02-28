@@ -1,0 +1,30 @@
+[
+	{
+		"date": "24-Apr-07",
+		"score": 20
+	},
+	{
+		"date": "25-Apr-07",
+		"score": 30
+	},
+  {
+    "date": "10-May-07",
+    "score": 10
+  },
+  {
+    "date": "15-May-07",
+    "score": 20
+  },
+  {
+    "date": "25-May-07",
+    "score": 40
+  },
+  {
+    "date": "25-Jun-07",
+    "score": 30
+  },
+  {
+    "date": "25-Jun-09",
+    "score": 20
+  }
+]

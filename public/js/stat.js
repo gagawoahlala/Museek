@@ -1,99 +1,106 @@
+$(document).ready(function() {
+  // $("body").fadeOut(300);
+  $("body").delay(200).fadeIn(200);
 
-// Get the data
-var datum = [
-              {
-                "date": "24-Apr-07",
-                "close":	93.24
-              },
-              {
-                "date": "25-Apr-07",
-                "close":	95.35
-              }
-          ];
+  var myStorage = window.localStorage;
+  // myStorage.setItem('chapter', 0);
+  var data = JSON.parse(myStorage.getItem('stat'));
+  // console.log(JSON.parse(data));
 
-          var margin = {
-              top: 20,
-              right: 30,
-              bottom: 30,
-              left: 40
-            },
-            width = 500 - margin.left - margin.right,
-            height = 200 - margin.top - margin.bottom;
 
-          // scale to ordinal because x axis is not numerical
-          var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
+  var svg = d3.select("svg"),
+      margin = {top: 20, right: 20, bottom: 40, left: 50},
+      width = +svg.attr("width") - margin.left - margin.right,
+      height = +svg.attr("height") - margin.top - margin.bottom,
+      g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-          //scale to numerical value by height
-          var y = d3.scale.linear().range([height, 0]);
+  var x = d3.scaleTime()
+      .rangeRound([0, width]);
+  var y = d3.scaleLinear().range([height, 0]);
+  var parseTime = d3.timeParse("%d-%b-%y");
 
-          var chart = d3.select("main")
-            .append("svg") //append svg element inside #chart
-            .attr("width", width + (2 * margin.left) + margin.right) //set width
-            .attr("height", height + margin.top + margin.bottom); //set height
-          var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom"); //orient bottom because x-axis will appear below the bars
+  var xAxis = d3.axisBottom()
+      .scale(x)
+      .ticks(5);
 
-          var yAxis = d3.svg.axis()
-            .scale(y)
-            .orient("left");
+  var yAxis = d3.axisLeft()
+      .scale(y)
+      .ticks(5);
 
-          d3.json("https://api.myjson.com/bins/4sw50", function(error, data) {
-            x.domain(data.map(function(d) {
-              return d.date
-            }));
-            y.domain([0, d3.max(data, function(d) {
-              return d.score
-            })]);
+  var valueline = d3.line()
+      .x(function (d) {
+          return x(parseTime(d.date));
+      })
+      .y(function (d) {
+          return y(d.score);
+      });
 
-            var bar = chart.selectAll("g")
-              .data(data)
-              .enter()
-              .append("g")
-              .attr("transform", function(d, i) {
-                return "translate(" + x(d.receive_date) + ", 0)";
-              });
 
-            bar.append("rect")
-              .attr("y", function(d) {
-                return y(d.responses);
-              })
-              .attr("x", function(d, i) {
-                return x.rangeBand() + (margin.left / 2);
-              })
-              .attr("height", function(d) {
-                return height - y(d.responses);
-              })
-              .attr("width", x.rangeBand()); //set width base on range on ordinal data
 
-            bar.append("text")
-              .attr("x", x.rangeBand() + margin.left)
-              .attr("y", function(d) {
-                return y(d.responses) - 10;
-              })
-              .attr("dy", ".75em")
-              .text(function(d) {
-                return d.responses;
-              });
+  // Get the data
+  // var data = [
+  // 	{
+  // 		"date": "24-Apr-07",
+  // 		"score": 20
+  // 	},
+  // 	{
+  // 		"date": "25-Apr-07",
+  // 		"score": 30
+  // 	},
+  //   {
+  //     "date": "10-May-07",
+  //     "score": 10
+  //   },
+  //   {
+  //     "date": "15-May-07",
+  //     "score": 20
+  //   },
+  //   {
+  //     "date": "25-May-07",
+  //     "score": 40
+  //   },
+  //   {
+  //     "date": "25-Jun-07",
+  //     "score": 30
+  //   },
+  //   {
+  //     "date": "25-Jun-07",
+  //     "score": 20
+  //   }
+  // ];
 
-            chart.append("g")
-              .attr("class", "x axis")
-              .attr("transform", "translate(" + margin.left + "," + height + ")")
-              .call(xAxis);
 
-            chart.append("g")
-              .attr("class", "y axis")
-              .attr("transform", "translate(" + margin.left + ",0)")
-              .call(yAxis)
-              .append("text")
-              .attr("transform", "rotate(-90)")
-              .attr("y", 6)
-              .attr("dy", ".71em")
-              .style("text-anchor", "end")
-              .text("responses");
-          });
 
-          function type(d) {
-            d.receive_date = +d.receive_date; // coerce to number
-            return d;
-          }
+  // Scale the range of the data
+  x.domain(d3.extent(data,
+      function (d) {
+          return parseTime(d.date);
+      }));
+  y.domain([
+      0, d3.max(data,
+          function (d) {
+              return d.score;
+          })
+  ]);
+
+  svg.append("path") // Add the valueline path.
+      .attr("d", valueline(data));
+
+  svg.append("g") // Add the X Axis
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis).select(".domain")
+        .remove();
+
+  svg.append("g") // Add the Y Axis
+      .attr("class", "y axis")
+      .call(yAxis).append("text")
+        .attr("fill", "#000")
+        // .attr("transform", "rotate(-90)")
+        .attr("x", 80)
+        .attr("y", 6)
+        .attr("dy", "0.71em")
+        .attr("text-anchor", "end")
+        .text("XP earned");
+
+})

@@ -1,6 +1,20 @@
 {
 	"chapters": [
 		{
+			"name": "The Language of Music",
+			"lessons": [
+				{
+					"name" : "The Musical Alphabet"
+				},
+				{
+					"name" : "The Piano"
+				},
+				{
+					"name" : "The Staff"
+				}
+			]
+		},
+		{
 			"name": "Notes",
       "lessons": [
 				{
@@ -46,27 +60,13 @@
       ]
     },
     {
-      "name": "The Musical Alphabet",
+      "name": "Final",
       "lessons": [
         {
           "name" : "hfdfhgj"
         },
         {
           "name" : "fsdfhjgkh"
-        },
-        {
-          "name" : ""
-        }
-      ]
-    },
-    {
-      "name": "Clefs",
-      "lessons": [
-        {
-          "name" : ""
-        },
-        {
-          "name" : ""
         },
         {
           "name" : ""

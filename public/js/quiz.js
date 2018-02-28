@@ -7,20 +7,27 @@ $(document).ready(function() {
 
 function initializePage() {
   var myStorage = window.localStorage;
-  var chapter = myStorage.getItem('chapter');
-  var lesson = myStorage.getItem('lesson');
+  var chapter = myStorage.getItem('currentChapter');
+  var lesson = myStorage.getItem('currentLesson');
+  var haveQuiz = $("main").attr('data-haveQuiz');
+  console.log(haveQuiz);
   $('#page0').removeClass("lesson-hidden");
-
-  buttonActions(chapter, lesson);
+  $('div[id^="text"]').html($('div[id^="text"]').text());
+  buttonActions(chapter, lesson, haveQuiz);
   clickableSVG();
   // $("#question1 .answer span label").click(enableButton);
 }
 
-function buttonActions(chapter, lesson) {
+function buttonActions(chapter, lesson, haveQuiz) {
   $('#prev-button0').addClass("button-disabled");
   var lastButton = $('button[id^="next-button"]').last();
-  lastButton.text("Ready for quiz");
-  lastButton.click(goToPage(`/question?chapter=${chapter}&lesson=${lesson}`));
+  if (haveQuiz === "true") {
+    lastButton.click(goToPage(`/question?chapter=${chapter}&lesson=${lesson}`));
+    lastButton.text("Ready for quiz");
+  } else {
+    lastButton.click(goToPage(`/summary`));
+    lastButton.text("Finish");
+  }
   $('button[id^="next-button"]').click(function(e) {
     var targetId = $(this).closest('.row').next().attr('id');
     var thisId = $(this).closest('.row').attr('id');

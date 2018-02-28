@@ -14,6 +14,8 @@ exports.view = function(req, res){
 //  var chapterObj = data[0]["lessons"][id];
 // console.log(chapterObj);
 //  console.log(data);
- res.render('quiz', LessonObj);
+  LessonObj.chapterNumber = chapterNumber;
+  LessonObj.lessonNumber = lessonNumber;
+  res.render('quiz', LessonObj);
  // res.render('index');
 };

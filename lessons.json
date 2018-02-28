@@ -1,6 +1,45 @@
 {
 	"chapters": [
 		{
+			"name": "The Language of Music",
+			"lessons": [
+				{
+					"name" : "The Musical Alphabet",
+					"pages": [
+						{
+
+							"image" : "/image/music_notes_croppped.svg",
+							"text":
+								"<p>“Music is the universal language of mankind”</p><br><p>Like any language, music can be written by following a set of rules. Musical pitches are represented by notes and notes are represented with English letters.</p><p>The letters <b>A, B, C, D, E, F, G</b> are used for musical notes.</p>"
+						}
+					],
+					"haveQuiz" : "false"
+				},
+				{
+					"name" : "The Piano",
+					"pages": [
+						{
+
+							"image" : "/image/88-key-piano-keyboard-layout.jpg",
+							"text": "<p>One of the most popular instruments is the piano. A full piano has <b>88 keys</b> which each corresponds to a specific note. A piano can play really low notes and really high notes.</p> "
+						}
+					],
+					"haveQuiz" : "false"
+				},
+				{
+					"name" : "The Staff",
+					"pages": [
+						{
+
+							"image" : "/image/snames1.gif",
+							"text": "<p>We write notes on a staff. The staff is like lined paper for musical writing. <br>Lines and spaces can contain a note. <br>Really high notes can also be written above the staff and low notes can be written below the staff.<br>Putting multiple notes on a staff is how music is written!</p> "
+						}
+					],
+					"haveQuiz" : "false"
+				}
+			]
+		},
+		{
 			"name": "Notes",
       "lessons": [
 				{

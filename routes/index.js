@@ -12,7 +12,6 @@ exports.view = function(req, res){
   // var lesson = myStorage.getItem('lesson');
 
   var chapterNumber = req.query.chapter; 
-  var lessonNumber = req.query.lesson; 
   // console.log(description);
   var chapterObj = undefined;
   if (chapterNumber != undefined) {

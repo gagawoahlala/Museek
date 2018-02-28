@@ -7,6 +7,7 @@ exports.view = function(req, res) { 
   // console.log("this chapterobj is:" + data["chapters"][chapterNumber]);
   var QuizObj = data["chapters"][chapterNumber]["lessons"][lessonNumber];
   QuizObj["questions"].forEach(function(question) {
+    question["feedback"] = QuizObj["feedback"];
     question["options"].forEach(function(option) {
       option.id = guid();
     });

@@ -53,9 +53,10 @@ function initializePage() {
     tempTotal++;
     if (correctAns === checkBoxes.filter(':checked').attr('data-val')){
       tempScore++;
+      $(targetId + " .modal-body h2").text("Great Job!");
     } else {
       var targetId = $(this).attr('data-target');
-      $(targetId + " .modal-body h2").text(correctAns + " is the correct Answer. You will do better next time!");
+      // $(targetId + " .modal-body h2").text(correctAns + " is the correct Answer. You will do better next time!");
     }
     myStorage.setItem("score", tempScore);
     myStorage.setItem("total", tempTotal);
