@@ -9,7 +9,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  $('#cl0').removeClass("button-disabled");
+  $('#c0l0').removeClass("button-disabled");
   var myStorage = window.localStorage;
   myStorage.setItem('chapter', 0);
   myStorage.setItem('lesson', 0);

@@ -9,9 +9,28 @@ function initializePage() {
   var myStorage = window.localStorage;
   var chapter = myStorage.getItem('chapter');
   var lesson = myStorage.getItem('lesson');
-  $('#Button').click(goToPage(`/question?chapter=${chapter}&lesson=${lesson}`));
+  $('#page0').removeClass("lesson-hidden");
+
+  buttonActions(chapter, lesson);
   clickableSVG();
   // $("#question1 .answer span label").click(enableButton);
+}
+
+function buttonActions(chapter, lesson) {
+  $('#prev-button0').addClass("button-disabled");
+  var lastButton = $('button[id^="next-button"]').last();
+  lastButton.text("Ready for quiz");
+  lastButton.click(goToPage(`/question?chapter=${chapter}&lesson=${lesson}`));
+  $('button[id^="next-button"]').click(function(e) {
+    var targetId = $(this).closest('.row').next().attr('id');
+    var thisId = $(this).closest('.row').attr('id');
+    renderPage(targetId, thisId)(e);
+  });
+  $('button[id^="prev-button"]').click(function(e) {
+    var targetId = $(this).closest('.row').prev().attr('id');
+    var thisId = $(this).closest('.row').attr('id');
+    renderPage(targetId, thisId)(e);
+  });
 }
 
 function clickableSVG() {
@@ -70,5 +89,57 @@ function goToPage(url) {
       window.location = url;
     }, 400);
   }
-
 }
+
+function renderPage(contentToDisplay,thisId) {
+  console.log(contentToDisplay);
+  return function renderElement(e) {
+    e.preventDefault();
+    console.log("trigger event");
+    var time = 300;
+
+    if (thisId < contentToDisplay) {
+      $("#" + thisId).animateCss('zoomOutRight', function() {
+        $("#" + thisId).addClass('lesson-hidden');
+        $("#" + contentToDisplay).animateCss('zoomInLeft');
+        $("#" + contentToDisplay).removeClass('lesson-hidden');
+
+      });
+    } else {
+      $("#" + thisId).animateCss('zoomOutLeft', function() {
+        $("#" + thisId).addClass('lesson-hidden');
+        $("#" + contentToDisplay).removeClass('lesson-hidden');
+        $("#" + contentToDisplay).animateCss('zoomInRight');
+      });
+    }
+
+    // $("#" + thisId).fadeOut(300);
+  };
+}
+
+$.fn.extend({
+  animateCss: function(animationName, callback) {
+    var animationEnd = (function(el) {
+      var animations = {
+        animation: 'animationend',
+        OAnimation: 'oAnimationEnd',
+        MozAnimation: 'mozAnimationEnd',
+        WebkitAnimation: 'webkitAnimationEnd',
+      };
+
+      for (var t in animations) {
+        if (el.style[t] !== undefined) {
+          return animations[t];
+        }
+      }
+    })(document.createElement('div'));
+
+    this.addClass('animated ' + animationName).one(animationEnd, function() {
+      $(this).removeClass('animated ' + animationName);
+
+      if (typeof callback === 'function') callback();
+    });
+
+    return this;
+  },
+});

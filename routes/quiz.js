@@ -1,7 +1,11 @@
-var data = require("../chapters.json");
+var data = require("../lessons.json");
 
 
 exports.view = function(req, res){
+  var chapterNumber = req.query.chapter; 
+  var lessonNumber = req.query.lesson; 
+  var LessonObj = data["chapters"][chapterNumber]["lessons"][lessonNumber];
+
 //  var chapterNumber = req.query.chapter; 
 //  var id = req.query.id; 
 //  // var description = req.query.description; 
@@ -10,6 +14,6 @@ exports.view = function(req, res){
 //  var chapterObj = data[0]["lessons"][id];
 // console.log(chapterObj);
 //  console.log(data);
- res.render('quiz', data);
+ res.render('quiz', LessonObj);
  // res.render('index');
 };

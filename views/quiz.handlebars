@@ -7,6 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+	<!-- or -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<link href="/css/general.css" rel="stylesheet">
 	<link href="/css/quiz.css" rel="stylesheet">
 	<link href="/css/responsive.css" rel="stylesheet">
@@ -28,7 +31,7 @@
 		    <div class="navbar-header">
 					<a href="javascript:history.back()" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></a>
 					<span class="navbar-brand">Treble Clef Notes</span>
-					<a href="/helper" class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
+					<a href="" style="visibility: hidden;" class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
 		    </div>
 
 		  </div><!-- /.container-fluid -->
@@ -36,28 +39,30 @@
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<main class="container-fluid">
-			<div class="row">
-			  <div class="col-sm-12 col-md-12 col-lg-12">
-			    <div class="thumbnail">
-						<object id="stuff" data="/image/music_notes_croppped.svg" type="image/svg+xml"></object>
-						<!-- <iframe id="B" src="/image/music_notes.svg" width="250" height="150"/> -->
-						<!-- <img class="quiz-picture" src="/image/music_notes.svg" alt=""> -->
-			      <div class="caption">
-							<div class="text">
-								<p>These are the notes on the treble clef. Press each note to hear the note.</p>
-								<p>Memorize these notes for quiz!</p>
-							</div>
-							<div class="tip">
-								<img class="quiz-picture" src="/image/single_note.svg" alt="">
-								<p class="tip-description">These are in alphabetical order-remember where A is.</p>
-								<img class="quiz-picture" src="/image/single_note.svg" alt="">
-							</div>
-			        <p><button id="Button" class="start-button universal-button">Ready For Quiz</button></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
+			{{#each pages}}
+				<div class="row lesson-hidden" id="page{{@index}}">
+				  <div class="col-sm-12 col-md-12 col-lg-12">
+				    <div class="thumbnail">
+							<object width="300" height="200" id="stuff" data="{{image}}" type="image/svg+xml"></object>
+							<!-- <iframe id="B" src="/image/music_notes.svg" width="250" height="150"/> -->
+							<!-- <img class="quiz-picture" src="/image/music_notes.svg" alt=""> -->
+				      <div class="caption">
+								<div class="text">
+									<p>These are the notes on the treble clef. Press each note to hear the note.</p>
+									<p>Memorize these notes for quiz!</p>
+								</div>
+								<div class="tip">
+									<img class="quiz-picture" src="/image/single_note.svg" alt="">
+									<p class="tip-description">{{tip}}</p>
+									<img class="quiz-picture" src="/image/single_note.svg" alt="">
+								</div>
+				      </div>
+				    </div>
+				  </div>
+					<p><button id="prev-button{{@index}}" class="start-button universal-button">Prev</button></p>
+					<p><button id="next-button{{@index}}" class="start-button universal-button">Next</button></p>
+				</div>
+			{{/each}}
 		</main>
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->

@@ -4,6 +4,17 @@ $(document).ready(function() {
 	initializePage();
 })
 
+function goToPage(url) {
+  return function(e) {
+    e.preventDefault();
+    $(this).closest('body').fadeOut(200);
+    setTimeout(function(){
+      window.location = url;
+    }, 400);
+  }
+
+}
+
 /*
  * Function that is called when the document is ready.
  */
@@ -11,6 +22,9 @@ function initializePage() {
   myStorage = window.localStorage;
   myStorage.setItem('score', 0);
   myStorage.setItem('total', 0);
+  var chapter = myStorage.getItem('chapter');
+  var lesson = myStorage.getItem('lesson');
+  $('#exitButton').click(goToPage(`/?chapter=${chapter}&lesson=${lesson}`));
   $('#question0').removeClass("question-hidden");
   $('button[id^="button"]').click(function(e) {
     var id = $(this).closest('.row').next().attr('id');

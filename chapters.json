@@ -4,20 +4,16 @@
 			"name": "Notes",
       "lessons": [
 				{
-					"name" : "Treble Clef",
-					"id" : 0
+					"name" : "Treble Clef"
 				},
         {
-          "name" : "Bass Clef",
-					"id" : 1
+          "name" : "Bass Clef"
         },
         {
-          "name" : "Swithing Clefs",
-					"id" : 2
+          "name" : "Swithing Clefs"
         },
         {
-          "name" : "Durations",
-					"id" : 3
+          "name" : "Durations"
         }
       ]
 		},

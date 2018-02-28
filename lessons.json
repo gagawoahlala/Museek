@@ -1,0 +1,28 @@
+{
+	"chapters": [
+		{
+			"name": "Notes",
+      "lessons": [
+				{
+					"name" : "Treble Clef",
+					"pages": [
+						{
+
+							"image" : "/image/music_notes_croppped.svg",
+							"tip" : "These are in alphabetical order-remember where A is."
+						},
+						{
+
+							"image" : "/image/c_note.svg",
+							"tip" : "Testing!!!!"
+						}
+					]
+				},
+        {
+          "name" : "Bass Clef",
+					"id" : 1
+        }
+      ]
+		}
+	]
+}

@@ -11,9 +11,9 @@ function initializePage() {
   var myStorage = window.localStorage;
   var chapter = myStorage.getItem('chapter');
   var lesson = myStorage.getItem('lesson');
-  $('#replay').click(goToPage(`/quiz/?chapter=&id=${lesson}`));
+  $('#replay').click(goToPage(`/quiz/?chapter=${chapter}&lesson=${lesson}`));
 
-  $('#goNote').click(goToPage(`/?chapter=${chapter}`));
+  $('#goNote').click(goToPage(`/?chapter=${chapter}&lesson=${lesson}`));
   // $("#question1 .answer span label").click(enableButton);
 }
 

@@ -25,6 +25,7 @@ body {
   color: white;
   border-radius: 5px;
   max-width: 240px;
+	margin: auto;
 }
 
 .container {
@@ -79,6 +80,7 @@ main .btn-block {
   align-items: center;
   justify-content: center;
   margin-top: 60px;
+  flex-direction: column;
 }
 
 .btn-lg {

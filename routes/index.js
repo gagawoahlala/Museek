@@ -5,13 +5,29 @@
  var data = require("../chapters.json");
 
 
+
 exports.view = function(req, res){
+  // var myStorage = window.localStorage;
+  // var chapter = myStorage.getItem('chapter');
+  // var lesson = myStorage.getItem('lesson');
+
   var chapterNumber = req.query.chapter; 
-  // var description = req.query.description; 
+  var lessonNumber = req.query.lesson; 
   // console.log(description);
-  var chapterObj = data["chapters"][chapterNumber];
-  chapterObj["currentChapterId"] = chapterNumber;
+  var chapterObj = undefined;
+  if (chapterNumber != undefined) {
+    chapterObj = data["chapters"][chapterNumber];
+    chapterObj["lessons"].forEach(function(lesson) {
+      lesson["currentChapter"] = chapterNumber;
+    });
+  }
+
+
   console.log(chapterObj);
-  res.render('index', chapterObj);
+  if (chapterObj != undefined) {
+    res.render('index', chapterObj);
+  } else {
+    res.render('auth');
+  }
   // res.render('index');
 };

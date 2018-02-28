@@ -71,15 +71,19 @@
 				<div class="alert-box" style="display:none; height:62px;">
 					<div class="alert alert-danger" role="alert">Sorry, Please verify your input.</div>
 				</div>
-				<button id="signUpRegist" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+				<div class="button-wrap">
+					<button id="signUpRegist" class="btn btn-lg btn-block" type="submit">Sign Up</button>
+				</div>
 			</form>
 
 			<form class="form-forget" style="display: none;">
 				<h2>Type your email of registration to reset your password</h2>
 				<label for="inputEmail" class="sr-only">Email address</label>
 				<input type="email"  class="form-control" placeholder="Email address" required="" autofocus="">
-				<button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Send link</button>
-				<button id ="signInForget" type="button" class="btn btn-lg btn-primary">Go back to Signin</button>
+				<div class="button-wrap">
+					<button type="button" class="btn btn-lg btn-block" data-toggle="modal" data-target=".bs-example-modal-lg">Send link</button>
+					<button id ="signInForget" type="button" class="btn btn-lg btn-block">Go back to Signin</button>
+				</div>
 				<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
@@ -88,7 +92,7 @@
 
 						<H2>Link sent!</H2>
 						<!-- <h4>Your Laptop battery is less then 10%.Recharge the battery.</h4> -->
-						<button id="sendLink" type="button" class="btn btn-primary" data-dismiss="modal" data-target=".bs-example-modal-lg">Go back to login</button>
+						<button id="sendLink" type="button" class="btn" data-dismiss="modal" data-target=".bs-example-modal-lg">Go back to login</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						</div>
 					</div>

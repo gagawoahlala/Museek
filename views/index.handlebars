@@ -57,7 +57,7 @@
 			<div class="btn-group-vertical" role="group" aria-label="">
 				<!-- <button onclick="location.href = '/quiz';" class="universal-button">Treble Clef</button> -->
 				{{#each lessons}}
-						<button id="c{{currentChapterId}}l{{id}}" onclick="location.href = '/quiz/?chapter={{currentChapterId}}&id={{id}}';"class="universal-button button-disabled">{{name}}</button>
+						<button id="c{{currentChapter}}l{{@index}}" onclick="location.href = '/quiz/?chapter={{currentChapter}}&lesson={{@index}}';"class="universal-button button-disabled">{{name}}</button>
 				{{/each}}
 
 				<!-- <button onclick="location.href = '/quiz';" class="universal-button">Treble Clef</button>
@@ -83,5 +83,18 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/index.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDoFphK0sDlNSoN_LjrGdokw4mZxIUHpyQ",
+	    authDomain: "cogs120-c7896.firebaseapp.com",
+	    databaseURL: "https://cogs120-c7896.firebaseio.com",
+	    projectId: "cogs120-c7896",
+	    storageBucket: "cogs120-c7896.appspot.com",
+	    messagingSenderId: "27799362539"
+	  };
+	  firebase.initializeApp(config);
+	</script>
 </body>
 </html>

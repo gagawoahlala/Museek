@@ -26,12 +26,25 @@
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-					<a href="/?chapter=0" class="glyphicon glyphicon-remove" aria-hidden="true"></a>
+					<a data-toggle="modal" data-target="#exitModal" class="glyphicon glyphicon-remove" aria-hidden="true"></a>
 					<span class="navbar-brand">Quiz</span>
+					<a href="" style="visibility: hidden;" class="glyphicon glyphicon-remove" aria-hidden="true"></a>
 		    </div>
 
 		  </div><!-- /.container-fluid -->
 		</nav>
+
+		<div id="exitModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h2>You will lost your current progress. Do you still want to continue?</h2>
+					<!-- <h4>Your Laptop battery is less then 10%.Recharge the battery.</h4> -->
+					</div>
+						 <button id="exitButton" class="start-button universal-button">Yes</button>
+				</div>
+			</div>
+		</div>
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<main class="container-fluid">
@@ -55,7 +68,7 @@
 									</span>
 								{{/each}}
 							</div>
-							<button data-answer="{{answer}}" id="modalPop{{@index}}" data-backdrop="static" data-toggle="modal" data-target="#modal{{@index}}">Confirm Answer</button>
+							<button class="confirm-button" data-answer="{{answer}}" id="modalPop{{@index}}" data-backdrop="static" data-toggle="modal" data-target="#modal{{@index}}">Confirm Answer</button>
 						</div>
 					</div>
 					<!-- The Modal -->
