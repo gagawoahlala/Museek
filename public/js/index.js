@@ -20,25 +20,36 @@ function initializePage() {
   	}
   ];
   var myStorage = window.localStorage;
-  var chapter = myStorage.getItem('chapter');
-  var lesson = myStorage.getItem('lesson');
+  var currentChapter = parseInt(myStorage.getItem('currentChapter'));
+  var chapter = parseInt(myStorage.getItem('chapter'));
+  var lesson = parseInt(myStorage.getItem('lesson'));
   var data = myStorage.getItem('stat');
-  if (!chapter) {
-    myStorage.setItem('chapter', 0);
+  if (typeof chapter == 'undefined' || isNaN(chapter)) {
+    myStorage.setItem('chapter', '0');
     chapter = 0;
   }
-  if (!lesson) {
-    myStorage.setItem('lesson', -1);
+
+  if (typeof lesson == 'undefined' || isNaN(lesson)) {
+    myStorage.setItem('lesson', '-1');
     lesson = -1;
   }
 
-  if (!data) {
+  if (typeof data == 'undefined' || ! data) {
     myStorage.setItem('stat', JSON.stringify(stat));
   }
 
   for (let i = 0; i <= chapter; i++) {
-    for (let j =0; j <= lesson + 1; j++) {
-      $('#c'+i+'l'+j).removeClass("button-disabled");
+    $('#chapters a').eq(i).removeClass("button-disabled");
+  }
+  if (currentChapter < chapter) {
+    $('button[id^=c]').removeClass("button-disabled");
+  } else {
+    for (let i = 0; i <= chapter; i++) {
+      // console.log(1 + parseInt(lesson));
+      for (let j =0; j <= parseInt(lesson) + 1; j++) {
+        console.log('#c'+i+'l'+j);
+        $('#c'+i+'l'+j).removeClass("button-disabled");
+      }
     }
   }
 

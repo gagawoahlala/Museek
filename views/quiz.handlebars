@@ -48,7 +48,7 @@
 							<!-- <img class="quiz-picture" src="/image/music_notes.svg" alt=""> -->
 				      <div class="caption">
 								<div id= "text{{@index}}" class="text">
-									{{text}}
+									{{{text}}}
 								</div>
 				      </div>
 				    </div>
@@ -67,7 +67,6 @@
 </body>
 	<script type="text/javascript">
 		var myStorage = window.localStorage;
-		myStorage.setItem('currentChapter',{{chapterNumber}});
 		myStorage.setItem('currentLesson',{{lessonNumber}});
 	</script>
 	<script src="https://code.jquery.com/jquery.js"></script>

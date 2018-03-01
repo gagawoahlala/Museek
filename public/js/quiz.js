@@ -12,7 +12,12 @@ function initializePage() {
   var haveQuiz = $("main").attr('data-haveQuiz');
   console.log(haveQuiz);
   $('#page0').removeClass("lesson-hidden");
-  $('div[id^="text"]').html($('div[id^="text"]').text());
+  // var texts = document.querySelector('div[id^="text"]');
+  // console.log(texts);
+  // texts.forEach(function(text) {
+  //   text.innerHTML = text.textContent;
+  // });
+  // $('div[id^="text"]').html($(this).text());
   buttonActions(chapter, lesson, haveQuiz);
   clickableSVG();
   // $("#question1 .answer span label").click(enableButton);

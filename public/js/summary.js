@@ -24,11 +24,22 @@ function calculateDate() {
  */
 function initializePage() {
   var myStorage = window.localStorage;
-  var chapter = myStorage.getItem('currentChapter');
-  var lesson = myStorage.getItem('currentLesson');
-  if (chapter > myStorage.getItem('chapter') ||
-  (lesson > myStorage.getItem('lesson') && chapter === myStorage.getItem('chapter'))) {
-      myStorage.setItem('lesson', lesson);
+  var chapter = parseInt(myStorage.getItem('currentChapter'));
+  var lesson = parseInt(myStorage.getItem('currentLesson'));
+  var currentLength =  parseInt(myStorage.getItem('currentChapterLength'));
+  var maxChapter = parseInt(myStorage.getItem('chapter'));
+  var maxLesson = parseInt(myStorage.getItem('lesson'));
+  if (lesson > maxLesson && chapter === maxChapter) {
+    // console.log(lesson);
+    maxLesson += 1;
+    // console.log(maxLesson);
+    if (lesson + 1 >= currentLength) {
+      myStorage.setItem('lesson', '-1');
+      myStorage.setItem('chapter', `${maxChapter + 1}`);
+    } else {
+      console.log("enter here");
+      myStorage.setItem('lesson', `${maxLesson}`);
+    }
   }
   var data = JSON.parse(myStorage.getItem('stat'));
   if(data[data.length-1]["date"] == calculateDate()){

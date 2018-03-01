@@ -18,30 +18,15 @@
 			"name": "Notes",
       "lessons": [
 				{
-					"name" : "Treble Clef"
-				},
-        {
-          "name" : "Bass Clef"
-        },
-        {
-          "name" : "Swithing Clefs"
-        },
-        {
-          "name" : "Durations"
-        }
+					"name" : "Identifying Notes"
+				}
       ]
 		},
     {
       "name": "Rhythm",
       "lessons": [
         {
-          "name" : "kjhkj"
-        },
-        {
-          "name" : "hkjhjk"
-        },
-        {
-          "name" : "kjhjh"
+          "name" : "Basic note durations"
         }
       ]
     },
@@ -49,13 +34,7 @@
       "name": "Rests",
       "lessons": [
         {
-          "name" : "kljlhj"
-        },
-        {
-          "name" : "fhdgffhg"
-        },
-        {
-          "name" : "hdjffjhfgjh"
+          "name" : "Identifying Rests"
         }
       ]
     },
@@ -63,13 +42,7 @@
       "name": "Final",
       "lessons": [
         {
-          "name" : "hfdfhgj"
-        },
-        {
-          "name" : "fsdfhjgkh"
-        },
-        {
-          "name" : ""
+          "name" : "Mary Had a Little Lamb"
         }
       ]
     }

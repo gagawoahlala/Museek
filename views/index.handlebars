@@ -38,7 +38,7 @@
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<div class="scrollmenu">
+					<div id="chapters" class="scrollmenu">
 					  <!-- <a href="#home">Prereq</a> -->
 					  <a href="/?chapter=0">The Language of Music</a>
 						<a class="button-disabled" href="/?chapter=1">Notes</a>
@@ -85,16 +85,11 @@
 	<script src="/js/index.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 	<script>
+		var myStorage = window.localStorage;
+		myStorage.setItem('currentChapterLength', {{lessons.length}});
+		myStorage.setItem('currentChapter',{{number}});
 	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyDoFphK0sDlNSoN_LjrGdokw4mZxIUHpyQ",
-	    authDomain: "cogs120-c7896.firebaseapp.com",
-	    databaseURL: "https://cogs120-c7896.firebaseio.com",
-	    projectId: "cogs120-c7896",
-	    storageBucket: "cogs120-c7896.appspot.com",
-	    messagingSenderId: "27799362539"
-	  };
-	  firebase.initializeApp(config);
+
 	</script>
 </body>
 </html>

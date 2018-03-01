@@ -1,66 +1,19 @@
 {
 	"chapters": [
 		{
-			"name": "Notes",
-			"lessons": [
-				{
-					"name" : "Treble Clef",
-					"feedback" : "That is incorrect. Remember that notes can be less than or more than one beat.",
-					"questions": [
-						{
-
-							"image" : "/image/c_note.svg",
-							"options" : [
-								{
-									"value": "A"
-								},
-								{
-									"value": "B"
-								},
-								{
-									"value": "C"
-								},
-								{
-									"value": "D"
-								}
-							],
-							"answer" : "C"
-						},
-						{
-							"image" : "/image/g_note.svg",
-							"options" : [
-								{
-									"value": "E"
-								},
-								{
-									"value": "F"
-								},
-								{
-									"value": "G"
-								},
-								{
-									"value": "H"
-								}
-							],
-							"answer" : "G"
-						}
-					]
-				},
-				{
-					"name" : "Bass Clef",
-					"id" : 1
-				}
-			]
+			"name": "prereq,keep this or error might occur."
 		},
 		{
 			"name": "Notes",
       "lessons": [
 				{
 					"name" : "Treble Clef",
+					"feedback": "That is incorrect. Remember that A starts on the second white space from the bottom.",
 					"questions": [
 						{
 
 							"image" : "/image/c_note.svg",
+							"question": "Which note is this?",
 							"options" : [
 								{
 									"value": "A"
@@ -79,6 +32,7 @@
 						},
 						{
 							"image" : "/image/g_note.svg",
+							"question": "Which note is this?",
 							"options" : [
 								{
 									"value": "E"
@@ -93,15 +47,171 @@
 									"value": "H"
 								}
 							],
-							"answer" : "G"
+							"answer" : "F"
+						},
+						{
+							"image" : "/image/g_note.svg",
+							"question": "I want to write a note on the second white space (from the bottom). Which do I want to write?",
+							"options" : [
+								{
+									"value": "A"
+								},
+								{
+									"value": "F"
+								},
+								{
+									"value": "B"
+								},
+								{
+									"value": "H"
+								}
+							],
+							"answer" : "A"
 						}
 					]
-				},
-        {
-          "name" : "Bass Clef",
-					"id" : 1
-        }
+				}
       ]
+		},
+		{
+			"name": "Pack",
+			"lessons": [
+				{
+					"name" : "Basic note durations",
+					"feedback": "That is incorrect. Remember that notes can be less than or more than one beat.",
+					"questions": [
+						{
+
+							"image" : "/image/c_note.svg",
+							"question": "How long does this note last?",
+							"options" : [
+								{
+									"value": ".5 beats (eighth)"
+								},
+								{
+									"value": "1 beats (eighth)"
+								},
+								{
+									"value": "1.5 beats (eighth)"
+								},
+								{
+									"value": "2 beats (eighth)"
+								}
+							],
+							"answer" : ".5 beats (eighth)"
+						},
+						{
+							"image" : "/image/g_note.svg",
+							"question": "How long does this note last?",
+							"options" : [
+								{
+									"value": "1 beats (dotted quarter)"
+								},
+								{
+									"value": "1.5 beats (dotted quarter)"
+								},
+								{
+									"value": "2 beats (dotted quarter)"
+								},
+								{
+									"value": "2.5 beats (dotted quarter)"
+								}
+							],
+							"answer" : "1.5 beats (dotted quarter)"
+						},
+						{
+							"image" : "/image/g_note.svg",
+							"question": "I want to write 4 beats of sound, with at least 2 quarter notes. How many half notes do I need to complete 4 beats?",
+							"options" : [
+								{
+									"value": "1"
+								},
+								{
+									"value": "2"
+								},
+								{
+									"value": "3"
+								},
+								{
+									"value": "4"
+								}
+							],
+							"answer" : "1"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Rests",
+			"lessons": [
+				{
+					"name" : "Basic rest durations",
+					"feedback": "That is incorrect. Remember that rests can be less than or equal to one beat.",
+					"questions": [
+						{
+
+							"image" : "/image/c_note.svg",
+							"question": "How long does this rest last?",
+							"options" : [
+								{
+									"value": "1 beat (quarter note)"
+								},
+								{
+									"value": "2 beat (quarter note)"
+								},
+								{
+									"value": "3 beat (quarter note)"
+								},
+								{
+									"value": "4 beat (quarter note)"
+								}
+							],
+							"answer" : "1 beat (quarter note)"
+						},
+						{
+							"image" : "/image/g_note.svg",
+							"question": "How long does this rest last?",
+							"options" : [
+								{
+									"value": "0.5 beats (eighth quarter)"
+								},
+								{
+									"value": "1 beats (eighth quarter)"
+								},
+								{
+									"value": "1.5 beats (eighth quarter)"
+								},
+								{
+									"value": "2 beats (eighth quarter)"
+								}
+							],
+							"answer" : "0.5 beats (eighth quarter)"
+						},
+						{
+							"image" : "/image/g_note.svg",
+							"question": "I want to write 4 beats of rest, with at least 2 quarter rests. How many eighth rests do I need to complete 4 beats?",
+							"options" : [
+								{
+									"value": "1"
+								},
+								{
+									"value": "2"
+								},
+								{
+									"value": "3"
+								},
+								{
+									"value": "4"
+								}
+							],
+							"answer" : "4"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "final,keep it for now"
 		}
 	]
 }

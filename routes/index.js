@@ -19,6 +19,7 @@ exports.view = function(req, res){
     chapterObj["lessons"].forEach(function(lesson) {
       lesson["currentChapter"] = chapterNumber;
     });
+    chapterObj["number"] = chapterNumber;
   }
 
 
