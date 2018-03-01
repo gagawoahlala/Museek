@@ -43,11 +43,14 @@
 				<div class="row lesson-hidden" id="page{{@index}}">
 				  <div class="col-sm-12 col-md-12 col-lg-12">
 				    <div class="thumbnail">
-							<!-- <object width="300" height="200" id="stuff" data="{{image}}" type="image/svg+xml"></object> -->
+							{{#if isSVG}}
+								<object width="300" height="200" id="stuff" data="{{image}}" type="image/svg+xml"></object>
+							{{else}}
+								<div class="scrollmenu">
+									<img class="quiz-picture" src="{{image}}" alt="">
+								</div>
+							{{/if}}
 							<!-- <iframe id="B" src="/image/music_notes.svg" width="250" height="150"/> -->
-							<div class="scrollmenu">
-								<img class="quiz-picture" src="{{image}}" alt="">
-							</div>
 				      <div class="caption">
 								<div id= "text{{@index}}" class="text">
 									{{{text}}}

@@ -11,5 +11,10 @@ exports.view = function(req, res) { 
   scoreObj["correct"] = correct;
   scoreObj["outOf"] = outof;
   scoreObj["accuracy"] = accuracy;
+  if (typeof accuracy !== 'undefined' && !isNaN(accuracy)) {
+    scoreObj["showScore"] = true;
+  } else {
+    scoreObj["showScore"] = false;
+  }
   res.render('summary', scoreObj);
 };

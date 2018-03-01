@@ -37,11 +37,18 @@
 		<!-- p means paragraph -->
 		<main class="container-fluid">
 			<!-- <a href="/stat" aria-hidden="true">See your statistics</a> -->
-			<img class="question-picture" src="/image/quiz_complete.svg" alt="">
-			<h2>Score:{{accuracy}}%</h2>
+			<div class="img-container">
+				<img class="question-picture" src="/image/quiz_complete.svg" alt="">
+			</div>
+			{{#if showScore}}
+				<h2>Score:{{accuracy}}%</h2>
+			{{/if}}
 			<h2>You earn 10 point of experience!</h2>
-			<button id="replay" type="button" class="btn btn-lg btn-primary">Retake</button>
-			<button id="goNote" type="button" class="btn btn-lg btn-primary">Back to Main Menu</button>
+			<div class="button-summary">
+				<button id="replay" type="button" class="btn btn-lg btn-success">Retake</button>
+				<button id="goNote" type="button" class="btn btn-lg btn-success">Back to Main Menu</button>
+			</div>
+
 		</main>
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->

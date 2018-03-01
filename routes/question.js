@@ -2,11 +2,20 @@ var data = require("../problems.json");
 
 exports.view = function(req, res) { 
   // controller code goes here 
+  var re = /(?:\.([^.]+))?$/;
+
   var chapterNumber = req.query.chapter; 
   var lessonNumber = req.query.lesson; 
   // console.log("this chapterobj is:" + data["chapters"][chapterNumber]);
+
   var QuizObj = data["chapters"][chapterNumber]["lessons"][lessonNumber];
   QuizObj["questions"].forEach(function(question) {
+    var ext = re.exec(question["image"])[1];
+    if (ext === "svg") {
+      question["isSVG"] = true;
+    } else {
+      question["isSVG"] = false;
+    }
     question["feedback"] = QuizObj["feedback"];
     question["options"].forEach(function(option) {
       option.id = guid();

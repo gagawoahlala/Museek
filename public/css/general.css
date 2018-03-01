@@ -75,11 +75,20 @@ div.scrollmenu a:hover {
 
 main {
   text-align: center;
-  margin-top: 88px;
+  margin-top: 60px;
   /* margin-bottom: 60px; */
 }
 
 .thumbnail {
   border: none;
   box-shadow: none;
+}
+
+img {
+  transform: translateX(-1px);
+}
+
+.img-container {
+  display: flex;
+  justify-content: space-around;
 }
