@@ -137,4 +137,5 @@ main .btn-block {
 	pointer-events: none;
 	width: 90%;
   margin-bottom: 20px;
+  max-width: 400px;
 }

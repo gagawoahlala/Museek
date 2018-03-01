@@ -36,10 +36,10 @@ function initializePage() {
     var relatedButton = $(this).closest('.answer').next();
     // console.log(checkBoxes.filter(':checked').attr('data-val'));
     if (checkBoxes.filter(':checked').length < 1) {
-      relatedButton.addClass("button-disabled")
+      relatedButton.addClass("button-disabled");
     } else {
-      relatedButton.removeClass("button-disabled")
-
+      relatedButton.removeClass("button-disabled");
+      relatedButton.addClass("confirm-button-square");
     }
   });
 

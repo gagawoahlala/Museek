@@ -32,7 +32,6 @@
   color: white;
   font-size: 25px;
   height: 65px;
-  border-radius: 35px;
   transition: all 1s;
   margin-top: 15px;
   box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 0 2px 0 -1px rgba(0,0,0,0.13), 0 3px 0 -1px rgba(0,0,0,0.08), 0 3px 13px -1px rgba(0,0,0,0.21);
@@ -40,6 +39,10 @@
   /* border: 1px solid rgba(0,0,0,0.21); */
   background-image: linear-gradient(to bottom,#9dca7d 0,#8dc366 100%);
 
+}
+
+.confirm-button-square {
+  border-radius: 35px;
 }
 
 .answer span {
