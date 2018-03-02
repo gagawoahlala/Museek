@@ -14,6 +14,8 @@
 .button-disabled {
   opacity: 0.6;
   pointer-events: none;
+  -webkit-filter: saturate(0);
+  filter: saturate(0);
 }
 
 

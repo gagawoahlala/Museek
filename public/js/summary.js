@@ -26,6 +26,7 @@ function initializePage() {
   var myStorage = window.localStorage;
   var chapter = parseInt(myStorage.getItem('currentChapter'));
   var lesson = parseInt(myStorage.getItem('currentLesson'));
+  $('#replay').click(goToPage(`/quiz/?chapter=${chapter}&lesson=${lesson}`));
   var currentLength =  parseInt(myStorage.getItem('currentChapterLength'));
   var maxChapter = parseInt(myStorage.getItem('chapter'));
   var maxLesson = parseInt(myStorage.getItem('lesson'));
@@ -36,6 +37,7 @@ function initializePage() {
     if (lesson + 1 >= currentLength) {
       myStorage.setItem('lesson', '-1');
       myStorage.setItem('chapter', `${maxChapter + 1}`);
+      chapter = maxChapter + 1;
     } else {
       console.log("enter here");
       myStorage.setItem('lesson', `${maxLesson}`);
@@ -54,10 +56,12 @@ function initializePage() {
   }
   myStorage.setItem('stat', JSON.stringify(data));
 
+  if (myStorage.getItem('viewAlt') == "true") {
+    $('#goNote').click(goToPage(`/viewAlt/?chapter=${Math.max(chapter,maxChapter)}&lesson=${lesson}`));
+  } else {
+    $('#goNote').click(goToPage(`/?chapter=${chapter}&lesson=${lesson}`));
+  }
 
-  $('#replay').click(goToPage(`/quiz/?chapter=${chapter}&lesson=${lesson}`));
-
-  $('#goNote').click(goToPage(`/?chapter=${chapter}&lesson=${lesson}`));
   // $("#question1 .answer span label").click(enableButton);
 }
 

@@ -73,10 +73,20 @@
 	<script type="text/javascript">
 		var myStorage = window.localStorage;
 		myStorage.setItem('currentLesson',{{lessonNumber}});
+		myStorage.setItem('currentChapter',{{chapterNumber}});
 	</script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/quiz.js"></script>
 	<!-- <audio id="play0" src="/image/sound/piano-ff-037.wav"></audio> -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114996586-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-114996586-1');
+	</script>
 
 </html>
