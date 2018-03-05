@@ -43,7 +43,7 @@ function initializePage() {
     $(this).parent().toggleClass("closed");
   });
 
-  $('.viewAlt-button-group').click(function() {
+  $('.viewAlt-button-group div').click(function() {
     console.log("click the chapters viewAlt");
     gtag("send", "event", "frequency", "click");
   });
