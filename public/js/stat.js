@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 
   var svg = d3.select("svg"),
-      margin = {top: 20, right: 20, bottom: 40, left: 50},
+      margin = {top: 20, right: 20, bottom: 80, left: 50},
       width = +svg.attr("width") - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom,
       g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -34,42 +34,6 @@ $(document).ready(function() {
       .y(function (d) {
           return y(d.score);
       });
-
-
-
-  // Get the data
-  // var data = [
-  // 	{
-  // 		"date": "24-Apr-07",
-  // 		"score": 20
-  // 	},
-  // 	{
-  // 		"date": "25-Apr-07",
-  // 		"score": 30
-  // 	},
-  //   {
-  //     "date": "10-May-07",
-  //     "score": 10
-  //   },
-  //   {
-  //     "date": "15-May-07",
-  //     "score": 20
-  //   },
-  //   {
-  //     "date": "25-May-07",
-  //     "score": 40
-  //   },
-  //   {
-  //     "date": "25-Jun-07",
-  //     "score": 30
-  //   },
-  //   {
-  //     "date": "25-Jun-07",
-  //     "score": 20
-  //   }
-  // ];
-
-
 
   // Scale the range of the data
   x.domain(d3.extent(data,
@@ -102,5 +66,10 @@ $(document).ready(function() {
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
         .text("XP earned");
+
+  svg.selectAll(".x.axis text")  // select all the text elements for the xaxis
+   .attr("transform", function(d) {
+       return "translate(" + this.getBBox().height*-0.5 + "," + this.getBBox().height + ")rotate(-60)";
+ });
 
 })

@@ -43,11 +43,13 @@ function initializePage() {
     $(this).parent().toggleClass("closed");
   });
 
-  $('div[id^="chapter"]').click(function() {
+  $('.viewAlt-button-group').click(function() {
+    console.log("click the chapters viewAlt");
     gtag("send", "event", "frequency", "click");
   });
 
-  $('div[id^="chapter"]').click(function() {
+  $('#chapters a').click(function() {
+    console.log("click the chapters");
     gtag("send", "event", "frequency", "click");
   });
 
