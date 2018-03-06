@@ -51,7 +51,7 @@ function initializePage() {
 
   });
 
-  $('#chapters a').click(function() {
+  $('#chapters.scrollmenu').click(function() {
     console.log("click the chapters");
     gtag('event', "click", {
       'event_category': "frequency"
