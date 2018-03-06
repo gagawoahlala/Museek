@@ -59,6 +59,7 @@ function initializePage() {
   });
 
   $('.viewAlt-button-group div div li').click(function() {
+    console.log("time recorded alt!");
     if (window.performance) {
       // Gets the number of milliseconds since page load
       // (and rounds the result since the value must be an integer).
@@ -70,6 +71,7 @@ function initializePage() {
   });
 
   $('.btn-group-vertical button').click(function() {
+    console.log("time recored!!");
     if (window.performance) {
       // Gets the number of milliseconds since page load
       // (and rounds the result since the value must be an integer).
