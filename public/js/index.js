@@ -58,6 +58,29 @@ function initializePage() {
      });
   });
 
+  $('.viewAlt-button-group div div li').click(function() {
+    if (window.performance) {
+      // Gets the number of milliseconds since page load
+      // (and rounds the result since the value must be an integer).
+      var timeSincePageLoad = Math.round(performance.now());
+
+      // Sends the timing hit to Google Analytics.
+      ga('send', 'timing', 'UserPath', 'findLesson', timeSincePageLoad);
+    }
+  });
+
+  $('.btn-group-vertical button').click(function() {
+    if (window.performance) {
+      // Gets the number of milliseconds since page load
+      // (and rounds the result since the value must be an integer).
+      var timeSincePageLoad = Math.round(performance.now());
+
+      // Sends the timing hit to Google Analytics.
+      ga('send', 'timing', 'UserPath', 'findLesson', timeSincePageLoad);
+    }
+  });
+
+
 
   // $(".dropdown li").click(function () {
   //   $(this).parent().parent().toggleClass("closed").find(".title").text($(this).text());
