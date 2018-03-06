@@ -66,8 +66,14 @@ function initializePage() {
       // (and rounds the result since the value must be an integer).
       var timeSincePageLoad = Math.round(performance.now());
 
+      ga('send', {
+        hitType: 'timing',
+        timingCategory: 'UserPath',
+        timingVar: 'findLesson',
+        timingValue: timeSincePageLoad
+      });
       // Sends the timing hit to Google Analytics.
-      ga('send', 'timing', 'UserPath', 'findLesson', timeSincePageLoad);
+      // ga('send', 'timing', 'UserPath', 'findLesson', timeSincePageLoad);
     }
   });
 
@@ -77,9 +83,14 @@ function initializePage() {
       // Gets the number of milliseconds since page load
       // (and rounds the result since the value must be an integer).
       var timeSincePageLoad = Math.round(performance.now());
-
+      ga('send', {
+        hitType: 'timing',
+        timingCategory: 'UserPath',
+        timingVar: 'findLesson',
+        timingValue: timeSincePageLoad
+      });
       // Sends the timing hit to Google Analytics.
-      ga('send', 'timing', 'UserPath', 'findLesson', timeSincePageLoad);
+      // ga('send', 'timing', 'UserPath', 'findLesson', timeSincePageLoad);
     }
   });
 
