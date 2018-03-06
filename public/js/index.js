@@ -58,7 +58,7 @@ function initializePage() {
      });
   });
 
-  $('.viewAlt-button-group div div li').click(function() {
+  $('.viewAlt-button-group div ul li').click(function() {
     console.log("time recorded alt!");
     if (window.performance) {
       // Gets the number of milliseconds since page load
