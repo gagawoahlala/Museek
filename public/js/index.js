@@ -47,8 +47,6 @@ function initializePage() {
     console.log("click the chapters viewAlt");
     gtag('event', "click", {
       'event_category': "frequency",
-      'event_label': "",
-      'value': 1
     });
 
   });
@@ -56,10 +54,8 @@ function initializePage() {
   $('#chapters a').click(function() {
     console.log("click the chapters");
     gtag('event', "click", {
-      'event_category': "frequency",
-      'event_label': "",
-      'value': 1
-    });
+      'event_category': "frequency"
+     });
   });
 
 
