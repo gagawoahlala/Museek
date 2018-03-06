@@ -61,6 +61,7 @@ function initializePage() {
   $('.viewAlt-button-group div ul li').click(function() {
     console.log("time recorded alt!");
     if (window.performance) {
+      console.log("supported");
       // Gets the number of milliseconds since page load
       // (and rounds the result since the value must be an integer).
       var timeSincePageLoad = Math.round(performance.now());
