@@ -45,7 +45,13 @@ function initializePage() {
 
   $('.viewAlt-button-group div').click(function() {
     console.log("click the chapters viewAlt");
-    gtag("send", "event", "frequency", "click");
+    gtag('event', "click", {
+      'event_category': "frequency",
+      'event_label': <label>,
+      'value': <value>
+    });
+    {/* gtag("send", "event", "frequency", "click"); */}
+
   });
 
   $('#chapters a').click(function() {
