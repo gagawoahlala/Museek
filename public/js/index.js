@@ -43,20 +43,23 @@ function initializePage() {
     $(this).parent().toggleClass("closed");
   });
 
-  $('.viewAlt-button-group div').click(function() {
+  $('.viewAlt-button-group div div').click(function() {
     console.log("click the chapters viewAlt");
     gtag('event', "click", {
       'event_category': "frequency",
-      'event_label': <label>,
-      'value': <value>
+      'event_label': "",
+      'value': 1
     });
-    {/* gtag("send", "event", "frequency", "click"); */}
 
   });
 
   $('#chapters a').click(function() {
     console.log("click the chapters");
-    gtag("send", "event", "frequency", "click");
+    gtag('event', "click", {
+      'event_category': "frequency",
+      'event_label': "",
+      'value': 1
+    });
   });
 
 
