@@ -43,7 +43,7 @@
 									<img data-ori="{{img_ori}}" data-alt="{{img_alt}}" src="{{img_ori}}"></img>
 									<span>{{name}}</span>
 								</div>
-								<ul class="animated fadeOutUp">
+								<ul>
 									{{#each lessons}}
 									<li class="title button-disabled" id="c{{chapterIndex}}l{{@index}}" onclick="location.href = '/quiz/?chapter={{chapterIndex}}&lesson={{@index}}';">{{name}}</li>
 									{{/each}}
