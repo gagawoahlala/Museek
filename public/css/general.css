@@ -20,14 +20,25 @@
 
 
 div.navbar-footer {
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 div.navbar-footer a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 30px;
   color: #949090;
+  min-width: 120px;
+  min-height: 50px;
+}
+
+div.navbar-footer a .nav-bottom-text {
+  font-size: 16px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 div.navbar-header {
@@ -50,8 +61,11 @@ div.navbar-header span {
   font-size: 25px;
 }
 
-div a:hover {
+div.navbar-footer a:hover {
   text-decoration: none;
+  background-color: #b4ffc8;
+  color: white;
+  transition: color 0.5s;
 }
 
 
