@@ -2,6 +2,8 @@
 	"chapters": [
 		{
 			"name": "The Language of Music",
+			"img_ori": "/image/comp2.png",
+			"img_alt": "/image/comp2b.png",
 			"lessons": [
 				{
 					"name" : "The Musical Alphabet"
@@ -16,6 +18,8 @@
 		},
 		{
 			"name": "Notes",
+			"img_ori": "/image/comp4.png",
+			"img_alt": "/image/comp4b.png",
       "lessons": [
 				{
 					"name" : "Identifying Notes"
@@ -24,6 +28,8 @@
 		},
     {
       "name": "Rhythm",
+			"img_ori": "/image/comp5.png",
+			"img_alt": "/image/comp5b.png",
       "lessons": [
         {
           "name" : "Basic note durations"
@@ -32,6 +38,8 @@
     },
     {
       "name": "Rests",
+			"img_ori": "/image/comp1.png",
+			"img_alt": "/image/comp1b.png",
       "lessons": [
         {
           "name" : "Identifying Rests"
@@ -40,6 +48,8 @@
     },
     {
       "name": "Final",
+			"img_ori": "/image/comp3.png",
+			"img_alt": "/image/comp3b.png",
       "lessons": [
         {
           "name" : "Mary Had a Little Lamb"
