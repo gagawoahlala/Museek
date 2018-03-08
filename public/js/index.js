@@ -41,17 +41,29 @@ function initializePage() {
   //The viewAlt handlers
   $(".dropdown .title").click(function () {
     $(this).parent().toggleClass("closed");
-    if ($(this).parent().hasClass( "closed" )) {
-      var imgObj = $(this).children()[0];
-      var altImg = imgObj.getAttribute("data-ori");
-      imgObj.setAttribute("src", altImg);
-      // imgObj.attr( "src" ) = imgObj.attr( "data-alt" )
+    if ($(this).next().hasClass( "animated fadeOutUp" )) {
+      $(this).next().removeClass('animated fadeOutUp');
+      $(this).next().addClass('animated fadeInDown');
     } else {
-      var imgObj = $(this).children()[0];
-      var altImg = imgObj.getAttribute("data-alt");
-      imgObj.setAttribute("src", altImg);
-      // imgObj.attr( "src" ) = imgObj.attr( "data-alt" )
+      $(this).next().removeClass('animated fadeInDown');
+      $(this).next().addClass('animated fadeOutUp');
     }
+
+    // if ($(this).parent().hasClass( "closed" )) {
+    //   // $(this).next().removeClass('animated zoomInLeft');
+    //   $(this).next().animateCss('fadeOutUp');
+    //   var imgObj = $(this).children()[0];
+    //   var altImg = imgObj.getAttribute("data-ori");
+    //   imgObj.setAttribute("src", altImg);
+    //   // imgObj.attr( "src" ) = imgObj.attr( "data-alt" )
+    // } else {
+    //   // $(this).next().addClass('animated zoomInLeft');
+    //   $(this).next().animateCss('fadeInDown');
+    //   var imgObj = $(this).children()[0];
+    //   var altImg = imgObj.getAttribute("data-alt");
+    //   imgObj.setAttribute("src", altImg);
+    //   // imgObj.attr( "src" ) = imgObj.attr( "data-alt" )
+    // }
   });
 
 
