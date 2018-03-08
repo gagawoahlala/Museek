@@ -1,0 +1,9 @@
+div.navbar-footer a[href="/profile"]{
+  pointer-events: none;
+}
+
+div.navbar-footer a[href="/profile"]:after{
+  content: "▲";
+  font-size: 12px;
+  transition: all 0.5s;
+}

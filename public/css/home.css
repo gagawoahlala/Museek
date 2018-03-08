@@ -180,3 +180,13 @@ div.dropdown ul li:before {
   content: "setting";
   position: absolute; */
 }
+
+div.navbar-footer a[href="#"]:after{
+  content: "▲";
+  font-size: 12px;
+  transition: all 0.5s;
+}
+
+div.navbar-footer a[href="#"]{
+  pointer-events: none;
+}

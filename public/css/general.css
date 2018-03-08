@@ -63,9 +63,9 @@ div.navbar-header span {
 
 div.navbar-footer a:hover {
   text-decoration: none;
-  background-color: #b4ffc8;
+  /* background-color: #b4ffc8;
   color: white;
-  transition: color 0.5s;
+  transition: color 0.5s; */
 }
 
 

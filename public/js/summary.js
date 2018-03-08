@@ -60,15 +60,3 @@ function initializePage() {
 
   // $("#question1 .answer span label").click(enableButton);
 }
-
-
-function goToPage(url) {
-  return function(e) {
-    e.preventDefault();
-    $(this).closest('body').fadeOut(200);
-    setTimeout(function(){
-      window.location = url;
-    }, 400);
-  }
-
-}

@@ -8,6 +8,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/general.css" rel="stylesheet">
+	<link href="/css/profile.css" rel="stylesheet">
 	<link href="/css/responsive.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->
 
@@ -21,18 +22,6 @@
 
 <body>
 	<div class="container">
-		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-					<a href="javascript:history.back()" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></a>
-					<span class="navbar-brand">Profile</span>
-					<a style="visibility: hidden;"class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
-		    </div>
-
-		  </div><!-- /.container-fluid -->
-		</nav>
-
 		<main class="container-fluid">
 			<div class="">
 				<img style="width: 50%;"class="question-picture" src="/image/avatar.svg" alt="">
@@ -40,11 +29,27 @@
 			<h2>Hello, User!</h2>
 			<button id="Logout" class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
 		</main>
-
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container navbar-footer">
+				<a href="#" class="glyphicon glyphicon-home" aria-hidden="true">
+					<div class="nav-bottom-text">Home</div>
+				</a>
+				<a href="/stat" class="glyphicon glyphicon-stats" aria-hidden="true">
+					<div class="nav-bottom-text">Statistics</div>
+				</a>
+				<a href="/profile" class="glyphicon glyphicon-user" aria-hidden="true">
+					<div class="nav-bottom-text">Profile</div>
+				</a>
+				<a href="/setting" class="glyphicon glyphicon-cog" aria-hidden="true">
+					<div class="nav-bottom-text">Setting</div>
+				</a>
+			</div>
+		</nav>
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/general.js"></script>
 	<script src="/js/profile.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114996586-1"></script>

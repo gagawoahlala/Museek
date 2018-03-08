@@ -22,17 +22,7 @@
 
 <body>
 	<div class="container">
-		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-					<a href="javascript:history.back()" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></a>
-					<span class="navbar-brand">Settings</span>
-					<a style="visibility: hidden;"class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
-		    </div>
 
-		  </div><!-- /.container-fluid -->
-		</nav>
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<main class="container-fluid">
@@ -42,14 +32,30 @@
 			</label>
 			<h3>Play the sound of the note during quiz</h3>
 		</main>
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
-		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
-		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container navbar-footer">
+				<a href="#" class="glyphicon glyphicon-home" aria-hidden="true">
+					<div class="nav-bottom-text">Home</div>
+				</a>
+				<a href="/stat" class="glyphicon glyphicon-stats" aria-hidden="true">
+					<div class="nav-bottom-text">Statistics</div>
+				</a>
+				<a href="/profile" class="glyphicon glyphicon-user" aria-hidden="true">
+					<div class="nav-bottom-text">Profile</div>
+				</a>
+				<a href="/setting" class="glyphicon glyphicon-cog" aria-hidden="true">
+					<div class="nav-bottom-text">Setting</div>
+				</a>
+			</div>
+		</nav>
 
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/general.js"></script>
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114996586-1"></script>
 	<script>

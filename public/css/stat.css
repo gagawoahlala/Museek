@@ -4,6 +4,20 @@ body {
     padding: 0;
 }
 
+main {
+    margin-top: 0px;
+}
+
+div.navbar-footer a[href="/stat"]{
+  pointer-events: none;
+}
+
+div.navbar-footer a[href="/stat"]:after{
+  content: "▲";
+  font-size: 12px;
+  transition: all 0.5s;
+}
+
 svg {
     padding: 30px;
     background: linear-gradient(to bottom, #93f9b9, #daffe8);

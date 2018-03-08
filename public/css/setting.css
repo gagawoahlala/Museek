@@ -1,5 +1,15 @@
 main {
-  
+
+}
+
+div.navbar-footer a[href="/setting"]{
+  pointer-events: none;
+}
+
+div.navbar-footer a[href="/setting"]:after{
+  content: "▲";
+  font-size: 12px;
+  transition: all 0.5s;
 }
 
 /* The switch - the box around the slider */

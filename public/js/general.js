@@ -1,3 +1,24 @@
+$(document).ready(function() {
+  // $("body").fadeOut(300);
+  var myStorage = window.localStorage;
+  var maxChapter = parseInt(myStorage.getItem('chapter'));
+  $('div.navbar-footer a[href="#"]').click(goToPage(`/?chapter=${maxChapter}`));
+});
+
+
+
+
+function goToPage(url) {
+  return function(e) {
+    e.preventDefault();
+    $(this).closest('body').fadeOut(200);
+    setTimeout(function(){
+      window.location = url;
+    }, 400);
+  }
+
+}
+
 $.fn.extend({
   animateCss: function(animationName, callback) {
     var animationEnd = (function(el) {
