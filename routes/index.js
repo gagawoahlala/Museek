@@ -14,35 +14,22 @@ function parseData(data) {
   }
   return data;
 }
-function getChapterObj(data, chapterNumber, viewAlt) {
+function getChapterObj(data, chapterNumber) {
   if (chapterNumber != undefined) {
     var chapterObj = data["chapters"][chapterNumber];
     chapterObj["lessons"].forEach(function(lesson) {
       lesson["currentChapter"] = chapterNumber;
     });
     chapterObj["number"] = chapterNumber;
-    chapterObj["viewAlt"] = false;
-    if (viewAlt) {
-      chapterObj["viewAlt"] = true;
-      chapterObj["chapters"] = parseData(data["chapters"]);
-    }
+    chapterObj["chapters"] = parseData(data["chapters"]);
+
   }
   return chapterObj;
 }
-exports.viewAlt = function(req, res){
-  var chapterNumber = req.query.chapter; 
-  var chapterObj = undefined || getChapterObj(data, chapterNumber, true);
-  console.log(chapterObj);
-  if (chapterObj != undefined) {
-    res.render('index', chapterObj);
-  } else {
-    res.render('auth');
-  }
-};
 
 exports.view = function(req, res){
   var chapterNumber = req.query.chapter; 
-  var chapterObj = undefined || getChapterObj(data, chapterNumber, false);
+  var chapterObj = undefined || getChapterObj(data, chapterNumber);
   console.log(chapterObj);
   if (chapterObj != undefined) {
     res.render('index', chapterObj);

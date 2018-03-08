@@ -41,25 +41,31 @@ function initializePage() {
   //The viewAlt handlers
   $(".dropdown .title").click(function () {
     $(this).parent().toggleClass("closed");
+    if ($(this).parent().hasClass( "closed" )) {
+      var imgObj = $(this).children()[0];
+      var altImg = imgObj.getAttribute("data-ori");
+      imgObj.setAttribute("src", altImg);
+      // imgObj.attr( "src" ) = imgObj.attr( "data-alt" )
+      console.log($(this).children()[0]);
+    } else {
+      var imgObj = $(this).children()[0];
+      var altImg = imgObj.getAttribute("data-alt");
+      imgObj.setAttribute("src", altImg);
+      // imgObj.attr( "src" ) = imgObj.attr( "data-alt" )
+      console.log($(this).children()[0]);
+    }
   });
 
+
+
   $('.viewAlt-button-group div div').click(function() {
-    console.log("click the chapters viewAlt");
     gtag('event', "click", {
       'event_category': "frequency",
     });
 
   });
 
-  $('#chapters.scrollmenu').click(function() {
-    console.log("click the chapters");
-    gtag('event', "click", {
-      'event_category': "frequency"
-     });
-  });
-
   $('.viewAlt-button-group div ul li').click(function() {
-    console.log("time recorded alt!");
     if (window.performance) {
       console.log("supported");
       // Gets the number of milliseconds since page load
@@ -77,61 +83,19 @@ function initializePage() {
     }
   });
 
-  $('.btn-group-vertical button').click(function() {
-    console.log("time recored!!");
-    if (window.performance) {
-      // Gets the number of milliseconds since page load
-      // (and rounds the result since the value must be an integer).
-      var timeSincePageLoad = Math.round(performance.now());
-      ga('send', {
-        hitType: 'timing',
-        timingCategory: 'UserPath',
-        timingVar: 'findLesson',
-        timingValue: timeSincePageLoad
-      });
-      // Sends the timing hit to Google Analytics.
-      // ga('send', 'timing', 'UserPath', 'findLesson', timeSincePageLoad);
+  $('#chapter0').removeClass("button-disabled");
+
+  for (let i = 0; i <= chapter - 1; i++) {
+    //nasty code!!!
+    for (let j = 0; j < 5; j++) {
+      $(`#c${i}l${j}`).removeClass("button-disabled");
     }
-  });
-
-
-
-  // $(".dropdown li").click(function () {
-  //   $(this).parent().parent().toggleClass("closed").find(".title").text($(this).text());
-  // });
-
-  //The viewAlt handlers
-
-
-  if (myStorage.getItem('viewAlt') == "true") {
-    $('#chapter0').removeClass("button-disabled");
-
-    for (let i = 0; i <= chapter - 1; i++) {
-      //nasty code!!!
-      for (let j = 0; j < 5; j++) {
-        $(`#c${i}l${j}`).removeClass("button-disabled");
-      }
-    }
-    for (let i = 0; i <= lesson + 1; i++) {
-      $(`#c${chapter}l${i}`).removeClass("button-disabled");
-    }
-    for (let i = 0; i <= chapter; i++) {
-      $(`#chapter${i}`).removeClass("button-disabled");
-    }
-  } else {
-    for (let i = 0; i <= chapter; i++) {
-      $('#chapters a').eq(i).removeClass("button-disabled");
-    }
-
-    for (let i = 0; i <= chapter - 1; i++) {
-      //nasty code!!!
-      for (let j = 0; j < 5; j++) {
-        $(`#c${i}l${j}`).removeClass("button-disabled");
-      }
-    }
-    for (let i = 0; i <= lesson + 1; i++) {
-      $(`#c${chapter}l${i}`).removeClass("button-disabled");
-    }
-
   }
+  for (let i = 0; i <= lesson + 1; i++) {
+    $(`#c${chapter}l${i}`).removeClass("button-disabled");
+  }
+  for (let i = 0; i <= chapter; i++) {
+    $(`#chapter${i}`).removeClass("button-disabled");
+  }
+
 }

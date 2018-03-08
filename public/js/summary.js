@@ -56,11 +56,7 @@ function initializePage() {
   }
   myStorage.setItem('stat', JSON.stringify(data));
 
-  if (myStorage.getItem('viewAlt') == "true") {
-    $('#goNote').click(goToPage(`/viewAlt/?chapter=${Math.max(chapter,maxChapter)}&lesson=${lesson}`));
-  } else {
-    $('#goNote').click(goToPage(`/?chapter=${chapter}&lesson=${lesson}`));
-  }
+  $('#goNote').click(goToPage(`/?chapter=${Math.max(chapter,maxChapter)}&lesson=${lesson}`));
 
   // $("#question1 .answer span label").click(enableButton);
 }

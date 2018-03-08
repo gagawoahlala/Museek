@@ -1,3 +1,23 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+div.navbar-header span {
+    font-size: 50px;
+}
+
+.navbar-default.navbar-fixed-top {
+  /* background: rgba(146, 252, 188, 0.4); */
+  background: none;
+}
+
+.navbar-default {
+  background: rgba(146, 252, 188, 0.4);
+  box-shadow: none;
+  border: none;
+}
+
+
 main {
   margin-top: 80px;
 }
@@ -35,14 +55,48 @@ div.dropdown {
   border-radius: 10px;
   text-align: left;
   font-size: 25px;
+  color: #000;
+  width: 98%;
+  margin: 15px auto;
+  background-color: #ffffff;
+  background-image: url(/image/ch1.png);
+  border: 1px solid;
+  text-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 5px white;
+  background-size: cover;
+  min-height: 125px;
+}
+
+div.dropdown img{
+  max-height: 125px;
+  position: relative;
+  z-index: 3;
+  /* background-image: url(/image/chi.png); */
+  /* border-radius: 10px;
+  text-align: left;
+  font-size: 25px;
   color: #98bd90;
   width: 90%;
   margin: 15px auto;
-  background-color: #eeffee;
+  background-color: #eeffee; */
+}
+
+div.dropdown span{
+  position: absolute;
+  z-index: 4;
+  font-size: 35px;
+    left: 35%;
+  /* background-image: url(/image/chi.png); */
+  /* border-radius: 10px;
+  text-align: left;
+  font-size: 25px;
+  color: #98bd90;
+  width: 90%;
+  margin: 15px auto;
+  background-color: #eeffee; */
 }
 
 div.dropdown.closed ul{
-  margin-top: 0px;
+  margin: 0px;
 }
 
 div.dropdown.closed ul li{
@@ -51,14 +105,16 @@ div.dropdown.closed ul li{
 }
 
 div.dropdown.closed div.title:after{
-  margin-top: -14px;
+  margin-top: 45px;
   @include transform(rotate(0deg));
 }
 
 div.dropdown div.title{
+  display: flex;
+  align-items: center;
   width: 100%;
-  height: 120px;
-  padding: 12px;
+  height: 125px;
+  /* padding: 12px; */
   cursor: pointer;
   /* @include box-sizing("border-box");
   @include background-image(linear-gradient(top, rgba(230, 230, 230, $list_opacity), rgba(160, 160, 160, $list_opacity)));
@@ -72,7 +128,7 @@ div.dropdown div.title:after{
   content: "▾";
   position: absolute;
   right: 20px;
-  margin-top: -12px;
+  margin-top: 45px;
   @include transform(rotate(180deg));
 }
 

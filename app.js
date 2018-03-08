@@ -46,7 +46,6 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-app.get('/viewAlt', index.viewAlt);
 app.get('/auth', auth.view);
 app.get('/stat', stat.view);
 app.get('/quiz', quiz.view);

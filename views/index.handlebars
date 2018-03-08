@@ -2,27 +2,12 @@
 
 <html>
 <head>
-	<!-- Google Analytics Content Experiment code -->
-	<script>function utmx_section(){}function utmx(){}(function(){var
-	k='170740482-0',d=document,l=d.location,c=d.cookie;
-	if(l.search.indexOf('utm_expid='+k)>0)return;
-	function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-	indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-	length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-	'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-	'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-	'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-	valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-	'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-	</script><script>utmx('url','A/B');</script>
-	<!-- End of Google Analytics Content Experiment code -->
-
-
 	<title>MuSeek</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 	<link href="/css/general.css" rel="stylesheet">
 	<link href="/css/home.css" rel="stylesheet">
 	<link href="/css/responsive.css" rel="stylesheet">
@@ -38,14 +23,11 @@
 
 <body style="display:none;">
 	<div class="container-fluid">
-
-
-		{{#if viewAlt }}
 			<nav class="navbar navbar-default navbar-fixed-top">
 					<div class="navbar-header">
 						<button style="visibility:hidden" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 						</button>
-						<span class="navbar-brand">Museek</span>
+						<span class="navbar-brand"><b>Museek</b></span>
 						<a href="/helper" class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
 					</div>
 			</nav>
@@ -54,7 +36,10 @@
 					<div id="chapters" class="viewAlt-button-group">
 						{{#each chapters}}
 							<div class="dropdown closed">
-								<div id="chapter{{@index}}" class="title button-disabled">{{name}}</div>
+								<div style="" id="chapter{{@index}}" class="title button-disabled">
+									<img data-ori="/image/comp2.png" data-alt="/image/comp2b.png" src="/image/comp2.png"></img>
+									<span>{{name}}</span>
+								</div>
 								<ul>
 									{{#each lessons}}
 									<li class="title button-disabled" id="c{{chapterIndex}}l{{@index}}" onclick="location.href = '/quiz/?chapter={{chapterIndex}}&lesson={{@index}}';">{{name}}</li>
@@ -62,45 +47,9 @@
 								</ul>
 							</div>
 						{{/each}}
-						<!-- <button href="/?chapter=0">The Language of Music</button>
-						<button class="button-disabled" href="/?chapter=1">Notes</button>
-						<button class="button-disabled" href="/?chapter=2">Rhythm</button>
-						<button class="button-disabled" href="/?chapter=3">Rests</button>
-						<button class="button-disabled" href="/?chapter=4">Final</button> -->
 					</div>
 				</div>
 			</main>
-		{{else}}
-			<nav class="navbar navbar-default navbar-fixed-top">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<span class="navbar-brand">{{name}}</span>
-						<a href="/helper" class="glyphicon glyphicon-question-sign" aria-hidden="true"></a>
-					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<div id="chapters" class="scrollmenu">
-							<a href="/?chapter=0">The Language of Music</a>
-							<a class="button-disabled" href="/?chapter=1">Notes</a>
-							<a class="button-disabled" href="/?chapter=2">Rhythm</a>
-							<a class="button-disabled" href="/?chapter=3">Rests</a>
-							<a class="button-disabled" href="/?chapter=4">Final</a>
-						</div>
-					</div>
-			</nav>
-			<main class="container-fluid">
-				<div class="btn-group-vertical" role="group" aria-label="">
-					{{#each lessons}}
-							<button id="c{{currentChapter}}l{{@index}}" onclick="location.href = '/quiz/?chapter={{currentChapter}}&lesson={{@index}}';"class="universal-button button-disabled">{{name}}</button>
-					{{/each}}
-				</div>
-			</main>
-		{{/if}}
-
 		<nav class="navbar navbar-default navbar-fixed-bottom">
 		  <div class="container navbar-footer">
 				<a href="/stat" class="glyphicon glyphicon-stats" aria-hidden="true"></a>
@@ -117,12 +66,6 @@
 	<script>
 		var myStorage = window.localStorage;
 		myStorage.setItem('currentChapterLength', {{lessons.length}});
-		if (myStorage.getItem('viewAlt') == 'undefined' || myStorage.getItem('viewAlt') == null) {
-			myStorage.setItem('viewAlt',true);
-			if ("{{viewAlt}}" == "") {
-				myStorage.setItem('viewAlt',false);
-			}
-		}
 	  // Initialize Firebase
 
 	</script>
