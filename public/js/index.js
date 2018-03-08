@@ -46,13 +46,11 @@ function initializePage() {
       var altImg = imgObj.getAttribute("data-ori");
       imgObj.setAttribute("src", altImg);
       // imgObj.attr( "src" ) = imgObj.attr( "data-alt" )
-      console.log($(this).children()[0]);
     } else {
       var imgObj = $(this).children()[0];
       var altImg = imgObj.getAttribute("data-alt");
       imgObj.setAttribute("src", altImg);
       // imgObj.attr( "src" ) = imgObj.attr( "data-alt" )
-      console.log($(this).children()[0]);
     }
   });
 
