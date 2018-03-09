@@ -7,12 +7,13 @@ div.navbar-header span {
 }
 
 .navbar-default.navbar-fixed-top {
+  background: rgb(243, 243, 243);
   /* background: rgba(146, 252, 188, 0.4); */
-  background: none;
+  /* background: none; */
 }
 
 .navbar-default {
-  background: rgba(146, 252, 188, 0.4);
+  background: rgba(146, 252, 188, 0.9);
   box-shadow: none;
   border: none;
 }
