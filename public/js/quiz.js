@@ -72,18 +72,20 @@ function clickableSVG(arm) {
       // console.log(index);
       var svgItem = svgDoc.getElementById("Bitmap-Copy-" + index);
       // Set the colour to something else
-      svgItem.addEventListener('click', function() {
-        let text = svgDoc.getElementById(String.fromCharCode(i)).children[0];
-        // console.log(text);
-        console.log(`<audio id="play${index}" src="/image/sound/piano-ff-0${37 + i - first.charCodeAt(0)}.wav"></audio>`);
-        playSound(i, first.charCodeAt(0));
-        text.setAttribute("style", "text-shadow: 3px 2px 20px #5cb85c; animation: all 0.5s;");
-        setTimeout(function(){
-          text.setAttribute("style", "text-shadow: none;");
-        },500);
-        // text.classList.add("shakey");
-        // alert("happy!!!");
-      });
+      if (svgItem) {
+        svgItem.addEventListener('click', function() {
+          let text = svgDoc.getElementById(String.fromCharCode(i)).children[0];
+          // console.log(text);
+          console.log(`<audio id="play${index}" src="/image/sound/piano-ff-0${37 + i - first.charCodeAt(0)}.wav"></audio>`);
+          playSound(i, first.charCodeAt(0));
+          text.setAttribute("style", "text-shadow: 3px 2px 20px #5cb85c; animation: all 0.5s;");
+          setTimeout(function(){
+            text.setAttribute("style", "text-shadow: none;");
+          },500);
+          // text.classList.add("shakey");
+          // alert("happy!!!");
+        });
+      }
     }
 
 
