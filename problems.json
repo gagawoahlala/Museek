@@ -50,7 +50,7 @@
 							"answer" : "F"
 						},
 						{
-							"image" : "/image/g_note.svg",
+							"image" : "#",
 							"question": "I want to write a note on the second white space (from the bottom). Which do I want to write?",
 							"options" : [
 								{
@@ -73,7 +73,7 @@
       ]
 		},
 		{
-			"name": "Pack",
+			"name": "Rhythm",
 			"lessons": [
 				{
 					"name" : "Basic note durations",
@@ -81,7 +81,7 @@
 					"questions": [
 						{
 
-							"image" : "/image/c_note.svg",
+							"image" : "/image/note_half.svg",
 							"question": "How long does this note last?",
 							"options" : [
 								{
@@ -100,7 +100,7 @@
 							"answer" : ".5 beats (eighth)"
 						},
 						{
-							"image" : "/image/g_note.svg",
+							"image" : "/image/note_dottedquarter.svg",
 							"question": "How long does this note last?",
 							"options" : [
 								{
@@ -119,7 +119,7 @@
 							"answer" : "1.5 beats (dotted quarter)"
 						},
 						{
-							"image" : "/image/g_note.svg",
+							"image" : "#",
 							"question": "I want to write 4 beats of sound, with at least 2 quarter notes. How many half notes do I need to complete 4 beats?",
 							"options" : [
 								{
@@ -150,7 +150,7 @@
 					"questions": [
 						{
 
-							"image" : "/image/c_note.svg",
+							"image" : "/image/rest_whole.svg",
 							"question": "How long does this rest last?",
 							"options" : [
 								{
@@ -169,7 +169,7 @@
 							"answer" : "1 beat (quarter note)"
 						},
 						{
-							"image" : "/image/g_note.svg",
+							"image" : "/image/rest_half.svg",
 							"question": "How long does this rest last?",
 							"options" : [
 								{
@@ -188,7 +188,7 @@
 							"answer" : "0.5 beats (eighth quarter)"
 						},
 						{
-							"image" : "/image/g_note.svg",
+							"image" : "#",
 							"question": "I want to write 4 beats of rest, with at least 2 quarter rests. How many eighth rests do I need to complete 4 beats?",
 							"options" : [
 								{

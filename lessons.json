@@ -61,23 +61,23 @@
 					"name" : "16th, 8th, quarter, half, whole, dotted quarter",
 					"pages": [
 						{
-							"image" : "/image/single_note.svg",
+							"image" : "/image/note_quarter.svg",
 							"text": "Notes not only represent pitches but also represent <b>duration</b>.<br>In music, time is represented by <b>beats</b>.<br>A <b>quarter note</b> lasts for one beat and looks like this."
 						},
 						{
-							"image" : "/image/music_notes_croppped.svg",
+							"image" : "/image/note_half.svg",
 							"text": "A <b>half note</b> lasts for two beats and looks like this."
 						},
 						{
-							"image" : "/image/c_note.svg",
+							"image" : "/image/note_whole.svg",
 							"text": "A <b>whole note</b> lasts for four beats and looks like this."
 						},
 						{
-							"image" : "/image/g_note.svg",
+							"image" : "/image/note_eighth.svg",
 							"text": "An <b>eighth note</b> lasts for half a beat and looks like this."
 						},
 						{
-							"image" : "/image/museek_title.svg",
+							"image" : "/image/note_dottedquarter.svg",
 							"text": "A <b>dotted quarter note</b> lasts for one and a half beats and looks like this."
 						}
 					],
@@ -93,22 +93,22 @@
 					"pages": [
 						{
 
-							"image" : "/image/music_notes_croppped.svg",
+							"image" : "/image/rest_quarter.svg",
 							"text": "While notes are used to represent pitches, <b>rests</b> are used to represent silence in music.<br>Rests, like notes, are written in different ways.<br>A <b>quarter rest</b> is one beat of silence and looks like this. "
 						},
 						{
 
-							"image" : "/image/music_notes_croppped.svg",
+							"image" : "/image/rest_half.svg",
 							"text": "A <b>half rest</b> is two beats of silence and looks like this."
 						},
 						{
 
-							"image" : "/image/music_notes_croppped.svg",
+							"image" : "/image/rest_whole.svg",
 							"text": "A <b>whole rest</b> is four beats of silence and looks like this."
 						},
 						{
 
-							"image" : "/image/music_notes_croppped.svg",
+							"image" : "/image/rest_eighth.svg",
 							"text": "An <b>eighth rest</b> is half a beat of silence and looks like this."
 						}
 					],

@@ -10,7 +10,7 @@ function initializePage() {
   var chapter = myStorage.getItem('currentChapter');
   var lesson = myStorage.getItem('currentLesson');
   var haveQuiz = $("main").attr('data-haveQuiz');
-  console.log(haveQuiz);
+  // console.log(haveQuiz);
   $('#page0').removeClass("lesson-hidden");
   // var texts = document.querySelector('div[id^="text"]');
   // console.log(texts);
@@ -19,13 +19,26 @@ function initializePage() {
   // });
   // $('div[id^="text"]').html($(this).text());
   buttonActions(chapter, lesson, haveQuiz);
-  clickableSVG();
+  var first = "A", last = "G";
+  for (let i = first.charCodeAt(0); i <= last.charCodeAt(0); i++) {
+    var index = i - first.charCodeAt(0) + 1;
+    $( "html" ).append( `<audio id="play${index}" src="/image/sound/piano-ff-0${37 + index - 1}.wav"></audio>` );
+  }
+  var arm = document.getElementById("stuff");
+  if (arm != null) {
+    clickableSVG(arm);
+  }
   // $("#question1 .answer span label").click(enableButton);
 }
 
 function buttonActions(chapter, lesson, haveQuiz) {
   $('#prev-button0').addClass("button-disabled");
+  var firstButton = $('button[id^="prev-button"]').first();
+  firstButton.css("display", "none");
   var lastButton = $('button[id^="next-button"]').last();
+  lastButton.css("width", "200px");
+  lastButton.css("color", "white");
+  lastButton.css("background-color", "#228e22");
   if (haveQuiz === "true") {
     lastButton.click(goToPage(`/question?chapter=${chapter}&lesson=${lesson}`));
     lastButton.text("Ready for quiz");
@@ -45,16 +58,16 @@ function buttonActions(chapter, lesson, haveQuiz) {
   });
 }
 
-function clickableSVG() {
+function clickableSVG(arm) {
   // var a = $("#stuff");
-  var arm = document.getElementById("stuff");
+  // var arm = document.getElementById("stuff");
   arm.addEventListener('load', function(){
     var svgDoc = arm.contentDocument;
     // console.log(svgDoc);
     var first = "A", last = "G";
     for (let i = first.charCodeAt(0); i <= last.charCodeAt(0); i++) {
       var index = i - first.charCodeAt(0) + 1;
-      $( "html" ).append( `<audio id="play${index}" src="/image/sound/piano-ff-0${37 + index - 1}.wav"></audio>` );
+      // $( "html" ).append( `<audio id="play${index}" src="/image/sound/piano-ff-0${37 + index - 1}.wav"></audio>` );
     	// var curr = String.fromCharCode(i);
       // console.log(index);
       var svgItem = svgDoc.getElementById("Bitmap-Copy-" + index);
@@ -109,23 +122,8 @@ function renderPage(contentToDisplay,thisId) {
     e.preventDefault();
     console.log("trigger event");
     var time = 300;
-
-    if (thisId < contentToDisplay) {
-      $("#" + thisId).animateCss('zoomOutRight', function() {
-        $("#" + thisId).addClass('lesson-hidden');
-        $("#" + contentToDisplay).animateCss('zoomInLeft');
-        $("#" + contentToDisplay).removeClass('lesson-hidden');
-
-      });
-    } else {
-      $("#" + thisId).animateCss('zoomOutLeft', function() {
-        $("#" + thisId).addClass('lesson-hidden');
-        $("#" + contentToDisplay).removeClass('lesson-hidden');
-        $("#" + contentToDisplay).animateCss('zoomInRight');
-      });
-    }
-
-    // $("#" + thisId).fadeOut(300);
+    $("#" + contentToDisplay).delay(300).fadeIn(300);
+    $("#" + thisId).fadeOut(300);
   };
 }
 

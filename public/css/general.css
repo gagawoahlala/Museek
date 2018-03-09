@@ -1,3 +1,4 @@
+
 .universal-button {
   background: whitesmoke;
   border-radius: 40px;
@@ -24,6 +25,12 @@ div.navbar-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar-default {
+    background: rgba(227, 247, 224, 0.07);
+    box-shadow: none;
+    border: none;
 }
 
 div.navbar-footer a {

@@ -2,6 +2,17 @@ body {
     font: 12px Arial;
     margin: 0;
     padding: 0;
+    background-color: #bffbc7;
+}
+
+.img-container {
+  margin-top: 40px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 10px;
+    color: white;
 }
 
 svg {
@@ -38,8 +49,47 @@ path {
 #replay {
   margin-bottom: 10px;
   margin-top: 20px;
+  font-size: 30px;
 }
 
 #goNote {
+  font-size: 30px;
+}
+/*      star    */
+fieldset, label { margin: 0; padding: 0; }
 
+
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > label:before {
+  margin: 5px;
+  font-size: 75px;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+  /* border-radius: 10px;
+  box-shadow: 0 1px 6px 0 hsla(0,0%,0%,0.2); */
+}
+
+
+.rating > label {
+  color: white;
+ float: right;
+}
+
+.rating label.lighted {
+  color: #FFD700;
+  -webkit-animation: colorchange 0.5s infinite alternate;
+  animation: colorchange 0.5s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+  from { color: #20f72e; }
+  to { color: #85eb81; }
 }

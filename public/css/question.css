@@ -1,6 +1,13 @@
+.modal-button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .start-button {
   height: 45px;
-  width: 50%;
+  width: 40%;
   margin-bottom: 20px;
 }
 
