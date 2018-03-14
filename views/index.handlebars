@@ -14,6 +14,8 @@
 	<link href="/css/general.css" rel="stylesheet">
 	<link href="/css/home.css" rel="stylesheet">
 	<link href="/css/responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/hopscotch.css"></link>
+
 	<!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,7 +29,7 @@
 <body style="display:none;">
 	<div class="container-fluid">
 			<nav class="navbar navbar-default navbar-fixed-top">
-					<div class="navbar-header">
+					<div id="anchor1" class="navbar-header">
 						<button style="visibility:hidden" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 						</button>
 						<span class="navbar-brand"><b>Museek</b></span>
@@ -59,7 +61,7 @@
 						<div class="nav-bottom-text">Home</div>
 					</a>
 					<a href="/stat" class="glyphicon glyphicon-stats" aria-hidden="true">
-						<div class="nav-bottom-text">Statistics</div>
+						<div id="anchorStat" class="nav-bottom-text">Statistics</div>
 					</a>
 					<a href="/profile" class="glyphicon glyphicon-user" aria-hidden="true">
 						<div class="nav-bottom-text">Profile</div>
@@ -73,6 +75,7 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/hopscotch.js"></script>
 	<script src="/js/general.js"></script>
 	<script src="/js/index.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>

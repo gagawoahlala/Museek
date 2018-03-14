@@ -2,13 +2,14 @@
 $(document).ready(function() {
   // $("body").fadeOut(300);
   $("body").delay(200).fadeIn(200);
-	initializePage();
+	initializePage(tutorial);
+  // tutorial();
 })
 
 /*
  * Function that is called when the document is ready.
  */
-function initializePage() {
+function initializePage(callback) {
 
   var stat = [
   	{
@@ -101,4 +102,50 @@ function initializePage() {
     $(`#chapter${i}`).removeClass("button-disabled");
   }
 
+  callback();
+
+}
+
+function tutorial() {
+  // Define the tour!
+  var tour = {
+    id: "hello-hopscotch",
+    showPrevButton: true,
+    steps: [
+      {
+        title: "Welcome to Museek new musician!",
+        content: "Museek is a music education app that teaches new musicians like yourself how to read music through interactive lessons and quizzes.",
+        target: document.querySelector("#anchor1"),
+        placement: "bottom",
+        xOffset: 'center',
+      },
+      {
+        title: "",
+        content: "Packs contain individual lessons and quizzes that build off of one another. After you complete all the lessons/quizzes in a pack you unlock the next pack!",
+        target: document.querySelector("#chapter0"),
+        placement: "bottom",
+        xOffset: 'center'
+      },
+      {
+        title: "",
+        content: "You can click on Statistics to track your progress.",
+        target: document.querySelector("#anchorStat"),
+        placement: "top",
+        xOffset: 5,
+        yOffset: -20,
+        width: 200,
+        fixedElement: true
+      },
+      {
+        title: "",
+        content: "Click on the first pack The Language of Music to get started on your musical journey!",
+        target: document.querySelector("#chapter0"),
+        placement: "bottom",
+        xOffset: 'center'
+      }
+    ]
+  };
+
+  // Start the tour!
+  hopscotch.startTour(tour);
 }
