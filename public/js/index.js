@@ -1,7 +1,43 @@
+(function(){
+  function id(v){return document.getElementById(v); }
+  function loadbar() {
+    for(var i=0;i<9;i++) {
+    var x = $('.animated-notes')[i];
+    $(x).css('-webkit-animation','music 1s '+i+'00ms  ease-in-out both infinite');
+    }
+    var ovrl = id("overlay"),
+        // prog = id("progress"),
+        // stat = id("progstat"),
+        img = document.images,
+        c = 0;
+        tot = img.length;
+
+    function imgLoaded(){
+      c += 1;
+      // var perc = ((100/tot*c) << 0) +"%";
+      // prog.style.width = perc;
+      // stat.innerHTML = "Loading "+ perc;
+      if(c===tot) return doneLoading();
+    }
+    function doneLoading(){
+      ovrl.style.opacity = 0;
+      setTimeout(function(){
+        ovrl.style.display = "none";
+      }, 1200);
+    }
+    for(var i=0; i<tot; i++) {
+      var tImg     = new Image();
+      tImg.onload  = imgLoaded;
+      tImg.onerror = imgLoaded;
+      tImg.src     = img[i].src;
+    }
+  }
+  document.addEventListener('DOMContentLoaded', loadbar, false);
+}());
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
   // $("body").fadeOut(300);
-  $("body").delay(200).fadeIn(200);
+  // $("body").delay(200).fadeIn(200);
 	initializePage(tutorial);
   // tutorial();
 })
@@ -102,7 +138,17 @@ function initializePage(callback) {
     $(`#chapter${i}`).removeClass("button-disabled");
   }
 
-  callback();
+  var currentChapter = undefined || myStorage.getItem('currentChapter');
+  var chapterToExpand = myStorage.getItem('chapterToExpand');
+  console.log(chapterToExpand);
+  if (chapterToExpand != null) {
+    $("#chapter" + chapterToExpand).parent().removeClass("closed");
+  }
+  // console.log(currentChapter);
+  if (chapter == 0 && currentChapter === null) {
+    callback();
+  }
+
 
 }
 

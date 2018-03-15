@@ -55,6 +55,10 @@ path {
 #goNote {
   font-size: 30px;
 }
+
+#replay, #goNote {
+  border-radius: 40px;
+}
 /*      star    */
 fieldset, label { margin: 0; padding: 0; }
 

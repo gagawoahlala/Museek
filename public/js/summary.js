@@ -30,6 +30,7 @@ function initializePage() {
   var currentLength =  parseInt(myStorage.getItem('currentChapterLength'));
   var maxChapter = parseInt(myStorage.getItem('chapter'));
   var maxLesson = parseInt(myStorage.getItem('lesson'));
+  myStorage.setItem('chapterToExpand', `${chapter}`);
   if (lesson > maxLesson && chapter === maxChapter) {
     // console.log(lesson);
     maxLesson += 1;
@@ -42,6 +43,7 @@ function initializePage() {
       console.log("enter here");
       myStorage.setItem('lesson', `${maxLesson}`);
     }
+    myStorage.setItem('chapterToExpand', `${chapter}`);
   }
   var data = JSON.parse(myStorage.getItem('stat'));
   if(data[data.length-1]["date"] == calculateDate()){

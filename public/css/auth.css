@@ -139,3 +139,12 @@ main .btn-block {
   margin-bottom: 20px;
   max-width: 400px;
 }
+
+#signInLogin, #guestLogin {
+	width: 250px;
+}
+
+#guestLogin {
+	    background-color: #6ad21e;
+	margin-top: 10px;
+}

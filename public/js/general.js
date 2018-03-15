@@ -2,11 +2,22 @@ $(document).ready(function() {
   // $("body").fadeOut(300);
   var myStorage = window.localStorage;
   var maxChapter = parseInt(myStorage.getItem('chapter'));
-  $('div.navbar-footer a[href="#"]').click(goToPage(`/?chapter=${maxChapter}`));
+  $('div.navbar-footer a[href="#"]').click(goToPageNoAnimation(`/?chapter=${maxChapter}`));
 });
 
 
+function goToPageNoAnimation(url) {
+  return function(e) {
+    e.preventDefault();
+    // $(this).closest('body').fadeOut(200);
+    window.location = url;
 
+    // setTimeout(function(){
+    //   window.location = url;
+    // }, 400);
+  }
+
+}
 
 function goToPage(url) {
   return function(e) {

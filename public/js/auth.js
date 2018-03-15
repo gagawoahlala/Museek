@@ -13,12 +13,20 @@ function initializePage() {
   $('#sendLink').click(renderPage("form-signin",popup));
 	$('#signInForget').click(renderPage("form-signin"));
 	$('#signInLogin').bind('click', validLogin);
+	$('#guestLogin').bind('click', goHome);
 	$('#signUpRegist').bind('click', validSignUp);
 }
 
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
+}
+
+function goHome() {
+	$(this).closest('body').fadeOut(200);
+	setTimeout(function(){
+		window.location = '/?chapter=0';
+	}, 400);
 }
 
 function validSignUp(e) {

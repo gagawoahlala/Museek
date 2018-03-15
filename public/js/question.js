@@ -56,6 +56,8 @@ function initializePage() {
       var targetId = $(this).attr('data-target');
       // console.log($(targetId + " .modal-body h2"));
       $(targetId + " .modal-body h2").text("Great Job!");
+      $(targetId + " .modal-content").removeClass("wrong-answer");
+      $(targetId + " .modal-content").addClass("correct-answer");
     }
     myStorage.setItem("score", tempScore);
     myStorage.setItem("total", tempTotal);
