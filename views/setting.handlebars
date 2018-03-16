@@ -5,8 +5,12 @@
 	<title>MuSeek</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="image/favicon.ico" />
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 	<link href="/css/general.css" rel="stylesheet">
 	<link href="/css/setting.css" rel="stylesheet">
@@ -25,22 +29,43 @@
 			}
 			h3 {
 				font-family: 'Roboto Condensed', sans-serif;
+				margin-bottom: 20px;
 			}
 		</style>
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
 
-		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-		<!-- p means paragraph -->
-		<main class="container-fluid">
-			<label class="switch">
-			  <input type="checkbox">
-			  <span class="slider round"></span>
-			</label>
-			<h3>Play the sound of the note during quiz</h3>
-		</main>
+		<div class="wrapper">
+			<div class="window">
+
+				<div class="settings">
+					<div id="reminder" class="item">
+						<div class="label">
+							Enable daily reminder
+						</div>
+						<label class="switch"><input checked="true" type="checkbox" />
+							<div class="slider"></div>
+						</label>
+					</div>
+					<div class="item item-1">
+						<div class="label">
+							Time
+						</div>
+						<div class="input-group time" id="timepicker">
+		          <input class="form-control"/><span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+		        </div>
+					</div>
+					<div class="item">
+						<div class="label">
+							Reset tutorial
+						</div>
+						<button type="button" class="btn btn-success">Reset</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<nav class="navbar navbar-default navbar-fixed-bottom">
 			<div class="container navbar-footer">
@@ -63,7 +88,11 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="/js/general.js"></script>
+	<script src="/js/setting.js"></script>
+
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114996586-1"></script>

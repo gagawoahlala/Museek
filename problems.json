@@ -81,20 +81,20 @@
 					"questions": [
 						{
 
-							"image" : "/image/note_half.svg",
+							"image" : "/image/note_eighth.svg",
 							"question": "How long does this note last?",
 							"options" : [
 								{
 									"value": ".5 beats (eighth)"
 								},
 								{
-									"value": "1 beats (eighth)"
+									"value": "1 beats (quarter)"
 								},
 								{
-									"value": "1.5 beats (eighth)"
+									"value": "1.5 beats (dotted quarter)"
 								},
 								{
-									"value": "2 beats (eighth)"
+									"value": "2 beats (half)"
 								}
 							],
 							"answer" : ".5 beats (eighth)"
@@ -104,16 +104,16 @@
 							"question": "How long does this note last?",
 							"options" : [
 								{
-									"value": "1 beats (dotted quarter)"
+									"value": "1 beats (quarter)"
 								},
 								{
 									"value": "1.5 beats (dotted quarter)"
 								},
 								{
-									"value": "2 beats (dotted quarter)"
+									"value": "2 beats (half)"
 								},
 								{
-									"value": "2.5 beats (dotted quarter)"
+									"value": "2.5 beats (dotted half)"
 								}
 							],
 							"answer" : "1.5 beats (dotted quarter)"

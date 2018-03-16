@@ -2,6 +2,14 @@ $(document).ready(function() {
   // $("body").fadeOut(300);
   $("body").delay(200).fadeIn(200);
 	initializePage();
+  // $("[data-balloon]:after").css('opacity' , "0");
+  setTimeout(function() {
+    $("#temp-hover").addClass("hoverOnload");
+
+  }, 2500);
+  // setTimeout(5000, function() {
+    // $("#temp-hover").delay(13200).removeClass('hoverOnload');
+  // });
 })
 
 
@@ -27,8 +35,19 @@ function initializePage() {
   var arm = document.getElementById("stuff");
   if (arm != null) {
     clickableSVG(arm);
+
+    // prePlaySound(arm);
   }
+  var overflowitems = document.querySelector(".scrollmenu");
+  if (overflowitems) {
+    $("#temp-hover").addClass("showTooltip");
+  }
+  // console.log(isOverflown(overflowitems));
   // $("#question1 .answer span label").click(enableButton);
+}
+
+function isOverflown(element) {
+    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
 }
 
 function buttonActions(chapter, lesson, haveQuiz) {
@@ -41,7 +60,7 @@ function buttonActions(chapter, lesson, haveQuiz) {
   lastButton.css("background-color", "#228e22");
   if (haveQuiz === "true") {
     lastButton.click(goToPage(`/question?chapter=${chapter}&lesson=${lesson}`));
-    lastButton.text("Ready for quiz");
+    lastButton.text("Ready for Quiz");
   } else {
     lastButton.click(goToPage(`/summary`));
     lastButton.text("Finish");
@@ -64,6 +83,9 @@ function clickableSVG(arm) {
   arm.addEventListener('load', function(){
     var svgDoc = arm.contentDocument;
     // console.log(svgDoc);
+    if (svgDoc.getElementById("Bitmap-Copy-3")) {
+      $("#temp-hover").addClass("showTooltip");
+    }
     var first = "A", last = "G";
     for (let i = first.charCodeAt(0); i <= last.charCodeAt(0); i++) {
       var index = i - first.charCodeAt(0) + 1;
@@ -91,14 +113,25 @@ function clickableSVG(arm) {
 
   });
   var a = document.getElementById("stuff").contentDocument;
-  // console.log(a);
-  // // Get the SVG document inside the Object tag
-  // var svgDoc = a.contentDocument;
-  // console.log(svgDoc);
-  // Get one of the SVG items by ID;
-
+  // prePlaySound(arm);
 }
 
+// function prePlaySound(arm) {
+//   arm.addEventListener('load', function(){
+//     var svgDoc = arm.contentDocument;
+//     // console.log(svgDoc);
+//     var first = "A", last = "G";
+//     for (let i = first.charCodeAt(0); i <= last.charCodeAt(0); i++) {
+//       var index = i - first.charCodeAt(0) + 1;
+//       // $( "html" ).append( `<audio id="play${index}" src="/image/sound/piano-ff-0${37 + index - 1}.wav"></audio>` );
+//       // var curr = String.fromCharCode(i);
+//       // console.log(index);
+//       var svgItem = svgDoc.getElementById("Bitmap-Copy-" + index);
+//       console.log(svgItem);
+//       svgItem.click();
+//     }
+//   });
+// }
 
 function playSound(curr, offset) {
   var number = curr - offset + 1;

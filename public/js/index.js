@@ -49,13 +49,21 @@ function initializePage(callback) {
 
   var stat = [
   	{
-  		"date": "24-Feb-18",
+  		"date": "12-Mar-18",
   		"score": 20
   	},
   	{
-  		"date": "25-Feb-18",
-  		"score": 30
-  	}
+  		"date": "13-Mar-18",
+  		"score": 10
+  	},
+    {
+      "date": "14-Mar-18",
+      "score": 30
+    },
+    {
+      "date": "15-Mar-18",
+      "score": 40
+    }
   ];
   var myStorage = window.localStorage;
   var chapter = parseInt(myStorage.getItem('chapter'));

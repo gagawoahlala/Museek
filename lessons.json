@@ -47,7 +47,7 @@
 					"pages": [
 						{
 							"image" : "/image/music_notes_croppped.svg",
-							"text": "The <b>treble clef</b> is used when wanting to write higher notes.<br>These are the notes on the treble clef!<br>Remember that the musical alphabet starts with A and goes in order to G.<br>Press each note to hear it.<br><b>Remember where A starts!</b> It’ll help you for the quiz."
+							"text": "The <b>treble clef</b> is used when wanting to write higher notes.<br>These are the notes on the treble clef!<br>Remember that the musical alphabet starts with A and goes in order to G.<br><b>Press each note to hear it.</b><br><b>Remember where A starts!</b> It’ll help you for the quiz."
 						}
 					],
 					"haveQuiz" : "true"

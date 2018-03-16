@@ -1,6 +1,28 @@
 /* .navbar-header a {
   left: 15px;
 } */
+
+#temp-hover.showTooltip:before {
+  /* content: "▲"; */
+  opacity: 1;
+  /* font-size: 30px !important; */
+}
+
+#temp-hover.showTooltip:after {
+  opacity: 1;
+  background-color: #76d476fc;
+  font-size: 30px !important;
+}
+
+#temp-hover.hoverOnload::before {
+  opacity: 0;
+}
+
+#temp-hover.hoverOnload::after {
+  opacity: 0;
+}
+
+
 .navbar-brand {
   text-align: center;
   font-size: 21px;

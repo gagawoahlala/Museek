@@ -62,7 +62,7 @@ function initializePage() {
     myStorage.setItem("score", tempScore);
     myStorage.setItem("total", tempTotal);
   });
-  $('div[id^="question"]:last-child button[id^="button"]').text("finish quiz");
+  $('div[id^="question"]:last-child button[id^="button"]').text("Finish Quiz");
   $('div[id^="question"]:last-child button[id^="button"]').click(goToSummary);
 
   var $draggable = $('.draggable').draggabilly({

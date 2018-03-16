@@ -13,6 +13,10 @@ exports.view = function(req, res) { 
       'answer': 'Some levels are locked because they require prerequisites from previous lessons!',
       'id': 'project3'
     },
+    { 	'title': 'What are other music educational resources where I can learn more about music?',
+      'answer': 'Here are some helpful resources to continue and expand on your musical journey!<br><ul><li><b>Online music education exercises</b><br><a href="https://www.musictheory.net/" target="_blank">www.musictheory.net</a></li><li><b>Online courses</b><br><a href="https://www.berkleeshares.com/" target="_blank">www.berkleeshares.com</a></li><li><b>Advanced music education</b><br><a href="https://en.wikiversity.org/wiki/Portal:Music" target="_blank">Wikipedia</a><br><a href="https://method-behind-the-music.com/theory/notation" target="_blank">method-behind-the-music.com</a></li></ul>',
+      'id': 'project4'
+    },
 	]
   });
 };
